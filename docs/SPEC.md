@@ -1,30 +1,23 @@
-# Spec — the map is the stop
+# Spec — structure oracle
 
-ETHOnline 2026. Ships onto https://tradecharts.app as crypto Beta.
+ETHOnline 2026 Continuity. Ships onto https://tradecharts.app as crypto Beta.
 
-## See
+Prize boxes: **The Graph AI Continuity**, **Ledger Continuity**, **Chainlink Continuity**.
 
-Watchlist is the wallet. One row per spot coin and per Hyperliquid perp on the Binance coin-volume tape. Liquidation on the same pane as Long/Short invalidation.
+## Schema (one claim)
 
-`conflictOf(row)`:
+A confirmed map is a claim: `symbol`, `timeframe`, sorted pivots, `longKill`, `shortKill`, `barTime`, wallet, `positioned` | `opinion`. Hash: `mapHash` in `src/policy/hash.ts`.
 
-- `unmapped` — exposure, no Confirm
-- `aligned` — net direction matches a one-sided map, or both still alive
-- `fighting` — net long vs confirmed Short (or the reverse)
-- `insolvent` — liquidation sits inside the still-valid map (position dies before the thesis)
+Conflict for a book row (`src/policy/conflict.ts`): `unmapped` | `aligned` | `fighting` | `insolvent` (liq inside the still-valid map).
 
-## Stand behind
+Kill (`src/policy/kill.ts`): flatten only on a **close** through the kill, and only if net is still on that side. `mayAgent("flatten")` only.
 
-`mapHash(commit)` is SHA-256 of canonical JSON (`symbol`, `timeframe`, sorted pivots, both kills, `barTime`). Onchain attestations keccak the same string.
+## Sponsor wiring (event work)
 
-Confirm: hash **before** the bar closes, reveal after. Snapshot the ledger: `positioned` if this wallet held spot or perp on that coin, else `opinion`. Dead map is `invalidated` then `remapped` — never silently overwritten.
+1. **The Graph** — subgraph of claims + conflict. Consume live (Studio / Market). Desk and any other agent query the same data. Mocked data does not qualify.
+2. **Chainlink** — Data Streams / CRE provide the weekly close that sets `invalidated`. Not a homemade candle.
+3. **Ledger** — Key Ring / HITL before flatten. Agent does not hold a leakable venue key.
 
-## Stop
+## Desk (first client)
 
-`killAction`: flatten a long iff `close < longKill` and net > 0; flatten a short iff `close > shortKill` and net < 0. Wicks are not closes. `mayAgent("flatten")` only.
-
-Fallback if Hyperliquid writes are blocked: park a spot sell intent on Base for the same kill.
-
-## Validator
-
-Pure function. Schema (P1–P4) then hard Elliott (H1–H5) then Fib flags (F1–F6) then structure (S1–S6). `rejected` draws nothing. H5: no kill → reject.
+Watchlist is the wallet. Liq and kill on one pane. Propose → validator → Confirm → Graph row → Chainlink close → Ledger prompt → flatten.

@@ -1,28 +1,29 @@
 # TradeCharts Attest
 
-**The map is the stop.**
+**Structure oracle. The map is the stop.**
 
-Open-source policy layer for [TradeCharts](https://tradecharts.app) — ETHOnline 2026 (Continuity track).
+Open-source claim layer for [TradeCharts](https://tradecharts.app) — ETHOnline 2026 Continuity.
 
-The live desk is **Alpha**. This repo is the work that takes it to **crypto Beta**: a confirmed Elliott / Wyckoff map becomes a risk policy for the connected wallet. Testers feel it on the site. Judges build this module.
+AI proposes market structure. A deterministic validator gates it. Confirm is attested. A **Chainlink** close kills it. **The Graph** serves the claim live. **Ledger** must approve before a flatten agent may move funds. The live desk is the first client — a risk monitor, not a signal bot.
 
-Live: **https://tradecharts.app**  
-This repo: **https://github.com/AiAlchemist0/tradecharts-attest**
+Live Alpha: **https://tradecharts.app**  
+This repo: **https://github.com/AiAlchemist0/tradecharts-attest**  
+Spec: [docs/SPEC.md](docs/SPEC.md)
 
-The commercial app stays private. This tree has **no shared git history** with it.
+No shared git history with the commercial app.
 
-## What Alpha already does (on the site)
+## Alpha (already on the site)
 
-Wallet login (SIWE). Binance coin-volume tape. Spot + Hyperliquid perps on the ledger (read-only). AI stack: Elliott maps (Propose → validator → Long **and** Short → Confirm), Fib, wave internals, events calendar, Wyckoff, tape indicators. Human Confirm is final. Invalidation is required. The book does **not** yet flatten.
+Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wyckoff / Fib / internals / events / indicators. Validator is the render gate. Confirm is still private JSON. The book does not flatten.
 
-## What this module adds (Beta)
+## Beta (this event)
 
-| Verb | Module | Status |
+| Layer | Module | Sponsor (load-bearing) |
 | --- | --- | --- |
-| **See** | `src/policy/conflict.ts` — `aligned` / `fighting` / `unmapped` / `insolvent` (liq inside the map) | Logic in this repo; UI on the live desk during the event |
-| **Stand behind** | `src/policy/hash.ts` — canonical map hash for commit–reveal Confirm | Hash is here; EAS attest on Base during the event |
-| **Stop** | `src/policy/kill.ts` — flatten only on a **close** through invalidation; agent cannot open risk | Policy here; Hyperliquid write / Base intent during the event |
-| **Validator** | `src/validator/` — same render gate as production (hard Elliott reject, Fib flag) | Copied, tested |
+| **See** | `src/policy/conflict.ts` | **The Graph** — subgraph of maps + `aligned` / `fighting` / `unmapped` / `insolvent`. Continuity AI: risk monitor / portfolio copilot. Live queries, not mocked. |
+| **Stand behind** | `src/policy/hash.ts` | **Chainlink** Data Streams / CRE — weekly **close** that invalidates. Commit–reveal hash. |
+| **Stop** | `src/policy/kill.ts` | **Ledger** Key Ring / HITL — flatten only, no leakable keys, no open/increase/rotate. |
+| **Validator** | `src/validator/` | Same gate as production. Copied, tested. |
 
 ## Run
 
@@ -33,11 +34,11 @@ npm test
 
 ## Law
 
-- Not a signal. Not a prediction. Interpretive map with a kill.
-- Kill is a **close** (Binance week), not a five-minute wick.
-- Agent may only reduce or close matching risk. No open, no increase, no rotate.
-- `positioned` vs `opinion` will be a ledger snapshot at Confirm (event work).
+- Not a signal. Not a prediction. A *claim* with a kill.
+- Kill is a Chainlink **close**, not a wick.
+- Agent may only flatten matching risk, and only after Ledger (or documented fallback).
+- Graph is the query surface for other agents.
 
-## Out of scope here
+## Out of scope
 
-The private desk UI, store binaries, billing, Google/Apple login, copy-trading marketplace, Uniswap LP at Fibs.
+Private desk UI, store binaries, billing, copy-trading marketplace, Uniswap LP, Hedera x402 (unless the query API is later metered).
