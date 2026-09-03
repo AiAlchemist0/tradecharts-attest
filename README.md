@@ -12,17 +12,19 @@ ETHOnline 2026 Continuity. Live desk: [tradecharts.app](https://tradecharts.app)
 
 The open-source join between the chart, the wallet, and the stop. No shared git history with the commercial desk.
 
+Landing [tradecharts.ai](https://tradecharts.ai) tells one loop: **See → Propose → Teach → Confirm → Stop.** AI drafts the weekly map. You Confirm. Teaching the wave count is the product. **Rules over vibes.**
+
 ## Who this is for
 
-**Three people. One desk.** Crypto.com estimated ~**774 million** crypto owners by mid-2026. Most only hold. We design for people who trade, or who are learning the chart, and who need a map on coins they actually hold.
+**Trade — or learn the chart.** Three people. One desk. Crypto.com estimated ~**774 million** crypto owners by mid-2026. Most only hold. We design for people who trade, or who are learning the chart, and who need a map on coins they actually hold.
 
-How we weight the desk (not a survey): **wallet-native traders ~50%** · **charting beginners ~30%** · **experienced chartists ~20%**. Ask AI teaches beginners the story. Propose + validator serve people who already chart. Interpretive map — not a signal, not advice.
+How we weight the desk (not a survey): **wallet-native traders ~50%** · **charting beginners ~30%** · **experienced chartists ~20%**. Ask AI walks the count until beginners can Confirm. Propose + a rules check serve people who already chart. Empty tape. Your correction wins. Interpretive map — not a signal, not advice.
 
 <p align="center">
   <img src="assets/schematics/who.svg" width="100%" alt="Who TradeCharts is for — wallet-native traders, charting beginners, experienced chartists" />
 </p>
 <p align="center">
-  <img src="assets/schematics/story.svg" width="100%" alt="Data tells a story. AI analyses and educates. You Confirm." />
+  <img src="assets/schematics/story.svg" width="100%" alt="See. Propose. Teach. Confirm. AI drafts the weekly map. You Confirm." />
 </p>
 
 ## The problem
@@ -64,21 +66,21 @@ See / Stand behind / Stop is how we close those four. Phishing ERC-20s (visit / 
 
 The adjacent products each own one pane. TradingView owns the chart (Copilot / Pine; alerts can wait for bar close; they still do not flatten *your* perp). Binance and Hyperliquid own execution and **mark/wick** stops. DeBank / Zerion own the bag with no map. Nobody answers *is this book fighting its own map?*
 
-AI is a job on this desk, not a chatbot bolted on. **Propose / Analyse** draft a weekly map; the validator can refuse it; **you Confirm**. That Confirm can arm an **opt-in kill switch**: on a weekly *close* through the kill, matching Hyperliquid risk may flatten. It cannot add size, open, or rotate. Ledger confirms before funds. It is not unsupervised “AI trading,” and it is not a promise to save every position.
+AI is a job on this desk, not a chatbot bolted on. **Propose** drafts a weekly map. A rules check can refuse it. **You Confirm.** That Confirm can arm an **opt-in kill switch**: on a weekly *close* through the kill, matching Hyperliquid risk may flatten. It cannot add size, open, or rotate. Ledger confirms before funds. It is not unsupervised “AI trading,” and it is not a promise to save every position.
 
 | Job | TradingView | Binance | Hyperliquid | DeBank | TradeCharts |
 |---|---|---|---|---|---|
 | Coin-volume tape, 24/7 week | often USD vol | yes | yes | — | Binance coins |
 | Your bag is the watchlist | — | exchange acct | perps | yes | SIWE bag |
-| AI proposes the weekly map | Copilot / Pine | — | — | — | Propose / Analyse |
-| AI educates the tape’s story | help docs | academy | — | — | Ask AI |
-| Refuse a broken Elliott count | scripts can lie | — | — | — | validator |
-| Human Confirm — not a signal | alert / script | — | — | — | you Confirm |
+| AI drafts the weekly wave map | Copilot / Pine | — | — | — | Propose |
+| AI teaches why the map looks that way | help docs | academy | — | — | Ask AI |
+| Refuse a count that breaks the rules | scripts can lie | — | — | — | rules check |
+| You Confirm — not a signal | alert / script | — | — | — | you Confirm |
 | Bag ⋈ map (fighting / unmapped) | — | — | — | — | compose |
 | Kill on a **weekly close**, not a wick | optional alert | mark / wick | mark / wick | — | close-kill |
 | Opt-in kill switch — flatten matching risk | webhook bots | full trade | full trade | — | this event |
 
-We do not replace those tools. We join them. Propose / Analyse is Alpha. Close-kill flatten is this event (Beta).
+We do not join TradingView or Binance. We teach. Compose joins the bag to the map. Propose is Alpha. Close-kill flatten is this event (Beta).
 
 <p align="center">
   <img src="assets/schematics/compare.svg" width="100%" alt="TradeCharts versus TradingView, Binance, Hyperliquid, and DeBank" />

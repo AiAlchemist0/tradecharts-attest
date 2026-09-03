@@ -3,7 +3,7 @@
   <rect x="0.75" y="0.75" width="1098.5" height="688.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
   <text x="40" y="42" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3.2" fill="#c4a06a">THE JOIN</text>
   <text x="40" y="78" font-family="Georgia, 'Iowan Old Style', Times New Roman, serif" font-size="26" fill="#ecece8">Not another chart. The missing pane.</text>
-  <text x="40" y="106" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="13" fill="#8b8b86">AI proposes and teaches. You Confirm. An optional close-kill may flatten matching risk — it cannot add size.</text>
+  <text x="40" y="106" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="13" fill="#8b8b86">AI drafts and teaches. You Confirm. An optional stop may flatten matching risk — it cannot add size.</text>
 
   <rect x="40" y="128" width="1060" height="44" rx="8" fill="#111114"/>
   <text x="56" y="156" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#5c5c58">JOB</text>
@@ -30,15 +30,15 @@
     <text x="1010" y="252" text-anchor="middle" fill="#3dbe8c">SIWE bag</text>
 
     <line x1="40" x2="1100" y1="272" y2="272" stroke="#2a2a2e"/>
-    <text x="56" y="300" fill="#ecece8">AI proposes the weekly map</text>
+    <text x="56" y="300" fill="#ecece8">AI drafts the weekly wave map</text>
     <text x="430" y="300" text-anchor="middle" fill="#5c5c58">Copilot / Pine</text>
     <text x="575" y="300" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="720" y="300" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="865" y="300" text-anchor="middle" fill="#5c5c58">—</text>
-    <text x="1010" y="300" text-anchor="middle" fill="#3dbe8c">Propose / Analyse</text>
+    <text x="1010" y="300" text-anchor="middle" fill="#3dbe8c">Propose</text>
 
     <line x1="40" x2="1100" y1="320" y2="320" stroke="#2a2a2e"/>
-    <text x="56" y="348" fill="#ecece8">AI educates the tape’s story</text>
+    <text x="56" y="348" fill="#ecece8">AI teaches why the map looks that way</text>
     <text x="430" y="348" text-anchor="middle" fill="#5c5c58">help docs</text>
     <text x="575" y="348" text-anchor="middle" fill="#5c5c58">academy</text>
     <text x="720" y="348" text-anchor="middle" fill="#5c5c58">—</text>
@@ -54,7 +54,7 @@
     <text x="1010" y="396" text-anchor="middle" fill="#3dbe8c">validator</text>
 
     <line x1="40" x2="1100" y1="416" y2="416" stroke="#2a2a2e"/>
-    <text x="56" y="444" fill="#ecece8">Human Confirm — not a signal</text>
+    <text x="56" y="444" fill="#ecece8">You Confirm — not a signal</text>
     <text x="430" y="444" text-anchor="middle" fill="#5c5c58">alert / script</text>
     <text x="575" y="444" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="720" y="444" text-anchor="middle" fill="#5c5c58">—</text>
@@ -86,6 +86,6 @@
     <text x="1010" y="588" text-anchor="middle" fill="#c4a06a">this event</text>
   </g>
 
-  <text x="40" y="632" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">The tape tells a story. AI proposes and teaches. You Confirm. Flatten is opt-in, close-only, reduce-only — not a signal.</text>
-  <text x="40" y="656" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">We do not replace TradingView or Binance. We join the chart, the bag, and the stop so a spring cannot take a still-valid map.</text>
+  <text x="40" y="632" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">The candles tell a story. AI drafts and teaches. You Confirm. Flatten is opt-in, close-only, reduce-only — not a signal.</text>
+  <text x="40" y="656" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">We do not join TradingView or Binance. We teach. Compose joins the bag to the map so a fake-out cannot kill a still-valid thesis.</text>
 </svg>
