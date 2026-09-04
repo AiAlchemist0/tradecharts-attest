@@ -15,7 +15,7 @@ export const BLOCKED_BASES = new Set([
   "USDTAIRDROP",
   "USDCCLIAIM",
   "ETHCLAIM",
-  "CIRCLECLAIM",
+  "VISITETHCLAIM",
 ]);
 
 /** Confirmed scam contracts, lowercase 0x. Grow this when a hash is known. */

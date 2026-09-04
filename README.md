@@ -40,10 +40,10 @@ Wallet-native traders (Kai). Spot on Ethereum / Arbitrum / Base, perps on Hyperl
 |---|---|
 | Long ETH perp, weekly map still valid | A spring wicks through the HL stop. They are flat. The week closes back in range. Stopped by the hunt, not the thesis. |
 | Confirmed Short on ETH, still holding ETH + a long | Three tools, no sentence that says **fighting**. They add size into their own kill. |
-| Pendle YT, staked CHIP, dust ETH — no Confirm | The bag *is* the watchlist, but there is no policy. Unmapped. A CLAIM airdrop token would have been a fourth row; we drop bait before compose. |
+| Wallet connected, coins on the book, no Confirm | Unmapped. The bag is the watchlist, but there is no kill and no policy until they Confirm a map. |
 | Liq sitting inside the weekly map | The position dies before the thesis does. That is **insolvent** — visible only if book and map share a pane. |
 
-See / Stand behind / Stop is how we close those four.
+See / Stand behind / Stop is how we close those four. Phishing ERC-20s (visit / claim / airdrop copy) never reach compose — that is hygiene, not a user story.
 
 <p align="center">
   <img src="assets/schematics/three-places.svg" width="100%" alt="The chart, the wallet, and the perp stop live in three places" />

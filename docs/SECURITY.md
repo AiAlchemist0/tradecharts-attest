@@ -18,7 +18,7 @@ The join is See / Stand behind / Stop. Security here is those three moves, not a
 
 Code: `src/safety/token.ts`. Used by `compose` and `fetchStandardBag`.
 
-Explorer / subgraph token fields are **attacker-controlled**. A token named `CIRCLE CLAIM UNTIL …` is bait, not a desk name.
+Explorer / subgraph token fields are **attacker-controlled**. A token named `VISIT … CLAIM` is bait, not a desk name.
 
 1. Drop it from the bag **before** join. It never appears as aligned / fighting / unmapped.
 2. Do not let `USDTCLAIM` collapse onto `USDT`.

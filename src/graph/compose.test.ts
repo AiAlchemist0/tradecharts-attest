@@ -15,7 +15,7 @@ describe("compose", () => {
     const rows = compose({
       bag: [
         { symbol: "ETH", amount: 1, contract: null },
-        { symbol: "UDTMESUSCIRCLECLAIMUNTIL280625", amount: 1e18, contract: "0xdead" },
+        { symbol: "VISITETHCLAIM", amount: 1e18, contract: "0xdead" },
       ],
       maps: [{ symbol: "ETH-USD", bias: "long", longKill: 2800, shortKill: null }],
     });

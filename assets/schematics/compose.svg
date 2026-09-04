@@ -10,13 +10,11 @@
   <text x="165" y="168" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2.2" fill="#c4a06a">STANDARDIZED BAG</text>
   <text x="64" y="208" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#ecece8">ETH</text>
   <text x="250" y="208" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#8b8b86">spot</text>
-  <text x="64" y="240" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#ecece8">PENDLE</text>
+  <text x="64" y="240" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#ecece8">SOL</text>
   <text x="250" y="240" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#8b8b86">spot</text>
   <text x="64" y="272" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#ecece8">ETH perp</text>
   <text x="250" y="272" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#8b8b86">long</text>
-  <text x="64" y="304" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#5c5c58">CLAIM…</text>
-  <text x="250" y="304" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#5c5c58">dropped</text>
-  <text x="64" y="348" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">Hostile metadata never joins.</text>
+  <text x="64" y="348" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">Bait tickers never enter this join.</text>
 
   <!-- maps -->
   <rect x="330" y="136" width="250" height="248" rx="12" fill="#111114" stroke="#2a2a2e"/>
@@ -24,7 +22,7 @@
   <text x="354" y="208" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#ecece8">ETH-USD</text>
   <text x="540" y="208" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#d45b4a">short</text>
   <text x="354" y="240" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#8b8b86">kill 4100</text>
-  <text x="354" y="272" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#5c5c58">PENDLE</text>
+  <text x="354" y="272" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#5c5c58">SOL</text>
   <text x="540" y="272" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#5c5c58">none</text>
   <text x="354" y="348" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">Confirm is hashed. Not a tweet.</text>
 
