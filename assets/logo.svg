@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="TradeCharts">
+  <rect width="1200" height="1200" fill="#080809"/>
+  <g stroke="#2a2a2e" stroke-width="1" fill="none">
+    <line x1="80" x2="1120" y1="240" y2="240"/>
+    <line x1="80" x2="1120" y1="400" y2="400"/>
+    <line x1="80" x2="1120" y1="560" y2="560"/>
+    <line x1="80" x2="1120" y1="720" y2="720"/>
+    <line x1="80" x2="1120" y1="880" y2="880"/>
+  </g>
+  <polyline fill="none" stroke="#f0ebe3" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" opacity="0.22"
+    points="80,920 240,700 360,800 560,380 720,520 920,280 1120,360"/>
+  <line x1="80" x2="1120" y1="980" y2="980" stroke="#c4a06a" stroke-width="2" stroke-dasharray="10 8" opacity="0.5"/>
+  <rect x="390" y="290" width="420" height="420" rx="72" fill="#111114" stroke="#3a342c" stroke-width="8"/>
+  <path d="M470 620 L560 470 L640 540 L740 360 L810 440" fill="none" stroke="#d8d4cc" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="740" cy="360" r="14" fill="#3dbe8c"/>
+  <text x="600" y="820" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="72" letter-spacing="18" fill="#ecece8">TRADECHARTS</text>
+  <text x="600" y="880" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" letter-spacing="8" fill="#8b8b86">THE MAP IS THE STOP</text>
+</svg>
