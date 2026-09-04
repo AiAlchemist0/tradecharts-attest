@@ -1,45 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-label="Who TradeCharts is for — beginners and professionals, chartists and wallet-native traders">
-  <rect width="1100" height="520" rx="16" fill="#080809"/>
-  <rect x="0.75" y="0.75" width="1098.5" height="518.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
-  <text x="40" y="42" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3.2" fill="#c4a06a">WHO THIS IS FOR</text>
-  <text x="40" y="78" font-family="Georgia, 'Iowan Old Style', Times New Roman, serif" font-size="26" fill="#ecece8">Beginners and professionals. One desk.</text>
-  <text x="40" y="106" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="13" fill="#8b8b86">Hundreds of millions own crypto. A smaller set actually charts. We design for people who want the tape to tell a story they can Confirm.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="500" viewBox="0 0 1100 500" role="img" aria-label="Who TradeCharts is for: wallet-native traders, charting beginners, experienced chartists">
+  <rect width="1100" height="500" rx="16" fill="#080809"/>
+  <rect x="0.75" y="0.75" width="1098.5" height="498.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
+  <text x="40" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3.2" fill="#c4a06a">WHO THIS IS FOR</text>
+  <text x="40" y="76" font-family="Georgia, 'Iowan Old Style', Times New Roman, serif" font-size="26" fill="#ecece8">Three people. One desk.</text>
+  <text x="40" y="104" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="14" fill="#8b8b86">About 774 million people owned crypto by mid-2026 (Crypto.com). Most only hold. We design for the smaller set who trade — or who are learning to read a chart.</text>
+  <text x="40" y="126" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#5c5c58">Mix below is how we weight the product — not a survey of 774 million owners.</text>
 
-  <!-- funnel -->
-  <text x="40" y="140" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#c4a06a">THE POOL</text>
-  <rect x="40" y="156" width="480" height="52" rx="10" fill="#111114" stroke="#c4a06a" stroke-opacity="0.4"/>
-  <text x="56" y="178" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#ecece8">~774 million</text>
-  <text x="56" y="198" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">crypto owners worldwide · Crypto.com H1 2026</text>
+  <!-- three cards -->
+  <g>
+    <rect x="40" y="152" width="520" height="96" rx="12" fill="#111114" stroke="#8fa3b8" stroke-opacity="0.5"/>
+    <text x="64" y="188" font-family="Georgia, Times New Roman, serif" font-size="36" fill="#8fa3b8">50%</text>
+    <text x="160" y="178" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" fill="#ecece8">Wallet-native traders</text>
+    <text x="160" y="202" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Already in the book — spot and perps. The bag is the watchlist.</text>
+    <text x="160" y="222" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">They need the map next to coins they actually hold.</text>
+  </g>
+  <g>
+    <rect x="40" y="260" width="520" height="96" rx="12" fill="#111114" stroke="#3dbe8c" stroke-opacity="0.5"/>
+    <text x="64" y="296" font-family="Georgia, Times New Roman, serif" font-size="36" fill="#3dbe8c">30%</text>
+    <text x="160" y="286" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" fill="#ecece8">Charting beginners</text>
+    <text x="160" y="310" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">They can trade, but the 1–5 still looks like a foreign language.</text>
+    <text x="160" y="330" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Ask AI teaches the story. They Confirm only when they understand it.</text>
+  </g>
+  <g>
+    <rect x="40" y="368" width="520" height="96" rx="12" fill="#111114" stroke="#c4a06a" stroke-opacity="0.5"/>
+    <text x="64" y="404" font-family="Georgia, Times New Roman, serif" font-size="36" fill="#c4a06a">20%</text>
+    <text x="160" y="394" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" fill="#ecece8">Experienced chartists</text>
+    <text x="160" y="418" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">They already mark structure. Stocks or crypto. Empty tape first.</text>
+    <text x="160" y="438" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">The validator refuses a broken count. They Confirm. Their correction wins.</text>
+  </g>
 
-  <rect x="70" y="220" width="420" height="52" rx="10" fill="#111114" stroke="#2a2a2e"/>
-  <text x="86" y="242" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#ecece8">Tens of millions</text>
-  <text x="86" y="262" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">active onchain · a16z State of Crypto (not just holding)</text>
-
-  <rect x="110" y="284" width="340" height="72" rx="10" fill="#111114" stroke="#3dbe8c" stroke-opacity="0.45"/>
-  <text x="126" y="310" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#ecece8">Our wedge</text>
-  <text x="126" y="332" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">People who trade or want to learn the chart —</text>
-  <text x="126" y="348" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">and need a map on the coins they actually hold.</text>
-
-  <text x="40" y="390" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#5c5c58">Not a census of Elliott traders. Cited owners, then the job we serve.</text>
-
-  <!-- donut: design personas, not market share -->
-  <g transform="translate(780,300)">
-    <circle r="118" fill="none" stroke="#3dbe8c" stroke-width="36" stroke-dasharray="123 371" stroke-dashoffset="0" transform="rotate(-90)"/>
-    <circle r="118" fill="none" stroke="#c4a06a" stroke-width="36" stroke-dasharray="123 371" stroke-dashoffset="-123" transform="rotate(-90)"/>
-    <circle r="118" fill="none" stroke="#8fa3b8" stroke-width="36" stroke-dasharray="123 371" stroke-dashoffset="-246" transform="rotate(-90)"/>
-    <text text-anchor="middle" y="-6" font-family="Georgia, Times New Roman, serif" font-size="16" fill="#ecece8">Three people</text>
-    <text text-anchor="middle" y="16" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">equal design weight</text>
+  <!-- donut 50 / 30 / 20 of circumference 2π×108 ≈ 678.6 -->
+  <g transform="translate(820,310)">
+    <circle r="108" fill="none" stroke="#1a1a1e" stroke-width="40"/>
+    <!-- 50% wallet steel -->
+    <circle r="108" fill="none" stroke="#8fa3b8" stroke-width="40" stroke-dasharray="339 340" stroke-dashoffset="0" transform="rotate(-90)"/>
+    <!-- 30% beginner green -->
+    <circle r="108" fill="none" stroke="#3dbe8c" stroke-width="40" stroke-dasharray="204 475" stroke-dashoffset="-339" transform="rotate(-90)"/>
+    <!-- 20% chartist gold -->
+    <circle r="108" fill="none" stroke="#c4a06a" stroke-width="40" stroke-dasharray="136 543" stroke-dashoffset="-543" transform="rotate(-90)"/>
+    <text text-anchor="middle" y="-4" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#ecece8">Intended mix</text>
+    <text text-anchor="middle" y="18" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">how we weight the desk</text>
   </g>
   <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">
-    <rect x="560" y="430" width="12" height="12" rx="2" fill="#3dbe8c"/>
-    <text x="580" y="441" fill="#ecece8">Beginner chartist</text>
-    <text x="580" y="458" fill="#8b8b86" font-size="12">Ask AI explains the story</text>
-    <rect x="760" y="430" width="12" height="12" rx="2" fill="#c4a06a"/>
-    <text x="780" y="441" fill="#ecece8">TV professional</text>
-    <text x="780" y="458" fill="#8b8b86" font-size="12">empty tape, then Confirm</text>
-    <rect x="960" y="430" width="12" height="12" rx="2" fill="#8fa3b8"/>
-    <text x="980" y="441" fill="#ecece8">Wallet-native</text>
-    <text x="980" y="458" fill="#8b8b86" font-size="12">bag next to the map</text>
+    <rect x="700" y="448" width="10" height="10" rx="2" fill="#8fa3b8"/>
+    <text x="716" y="458" fill="#8b8b86">50% wallet</text>
+    <rect x="820" y="448" width="10" height="10" rx="2" fill="#3dbe8c"/>
+    <text x="836" y="458" fill="#8b8b86">30% beginner</text>
+    <rect x="950" y="448" width="10" height="10" rx="2" fill="#c4a06a"/>
+    <text x="966" y="458" fill="#8b8b86">20% chartist</text>
   </g>
-  <text x="560" y="490" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#5c5c58">Pie is who we design for — not a claimed share of 774 million.</text>
 </svg>

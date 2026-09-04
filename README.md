@@ -14,12 +14,12 @@ The open-source join between the chart, the wallet, and the stop. No shared git 
 
 ## Who this is for
 
-**Beginners and professionals. One desk.** Crypto.com counted ~**774 million** crypto owners by H1 2026. Most hold. A smaller set is active onchain. We design for people who trade *or are learning the chart* — and need a map on the coins they actually hold.
+**Three people. One desk.** Crypto.com estimated ~**774 million** crypto owners by mid-2026. Most only hold. We design for people who trade, or who are learning the chart, and who need a map on coins they actually hold.
 
-The agent **analyses and educates**. Propose drafts a weekly map. Ask AI walks the story the OHLC is telling (why this kill, why a spring is not the trend dying). You Confirm. Interpretive map — not a signal, not advice.
+How we weight the desk (not a survey): **wallet-native traders ~50%** · **charting beginners ~30%** · **experienced chartists ~20%**. Ask AI teaches beginners the story. Propose + validator serve people who already chart. Interpretive map — not a signal, not advice.
 
 <p align="center">
-  <img src="assets/schematics/who.svg" width="100%" alt="Who TradeCharts is for — beginners, TV professionals, wallet-native traders" />
+  <img src="assets/schematics/who.svg" width="100%" alt="Who TradeCharts is for — wallet-native traders, charting beginners, experienced chartists" />
 </p>
 <p align="center">
   <img src="assets/schematics/story.svg" width="100%" alt="Data tells a story. AI analyses and educates. You Confirm." />
