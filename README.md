@@ -17,6 +17,14 @@ Charts, venue stops, and wallet dashboards already exist. We do not claim they d
 
 No shared git history with the commercial app.
 
+## Architecture
+
+<p align="center">
+  <img src="assets/architecture.svg" width="100%" alt="TradeCharts Attest — desk consumes compose; Graph, CRE, Ledger" />
+</p>
+
+How the join works, what lives in this repo, and how the live desk consumes it without this tree including the commercial app: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 ## Live desk
 
 <p align="center">
