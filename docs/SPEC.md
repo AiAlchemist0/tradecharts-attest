@@ -1,23 +1,25 @@
-# Spec — structure oracle
+# Spec
 
 ETHOnline 2026 Continuity. Ships onto https://tradecharts.app as crypto Beta.
 
-Prize boxes: **The Graph AI Continuity**, **Ledger Continuity**, **Chainlink Continuity**.
+**Problem:** the chart, the wallet, and the perp stop still live in three places. Calls are screenshots, Hyperliquid stops fire on mark/wicks, and nothing can answer “is this book fighting its own map?”
 
-## Schema (one claim)
+Partners: **The Graph**, **Chainlink**, **Ledger** (Continuity prizes).
 
-A confirmed map is a claim: `symbol`, `timeframe`, sorted pivots, `longKill`, `shortKill`, `barTime`, wallet, `positioned` | `opinion`. Hash: `mapHash` in `src/policy/hash.ts`.
+## Claim
 
-Conflict for a book row (`src/policy/conflict.ts`): `unmapped` | `aligned` | `fighting` | `insolvent` (liq inside the still-valid map).
+A confirmed map: `symbol`, `timeframe`, sorted pivots, `longKill`, `shortKill`, `barTime`, wallet, `positioned` | `opinion`. Hash: `mapHash` in `src/policy/hash.ts`.
 
-Kill (`src/policy/kill.ts`): flatten only on a **close** through the kill, and only if net is still on that side. `mayAgent("flatten")` only.
+Conflict (`src/policy/conflict.ts`): `unmapped` | `aligned` | `fighting` | `insolvent` (liq inside the still-valid map).
 
-## Sponsor wiring (event work)
+Kill (`src/policy/kill.ts`): flatten only on a **close** through the kill, and only if net is still on that side. Flatten only — no open, add, or rotate.
 
-1. **The Graph** — subgraph of claims + conflict. Consume live (Studio / Market). Desk and any other agent query the same data. Mocked data does not qualify.
-2. **Chainlink** — Data Streams / CRE provide the weekly close that sets `invalidated`. Not a homemade candle.
-3. **Ledger** — Key Ring / HITL before flatten. Agent does not hold a leakable venue key.
+## Event wiring
 
-## Desk (first client)
+1. **The Graph** — subgraph of claims + conflict. Consume live.
+2. **Chainlink** — Data Streams / CRE weekly close sets `invalidated`.
+3. **Ledger** — device approval before flatten.
 
-Watchlist is the wallet. Liq and kill on one pane. Propose → validator → Confirm → Graph row → Chainlink close → Ledger prompt → flatten.
+## Desk (this event)
+
+Watchlist is the wallet. Liq and kill on one pane. Propose → validator → Confirm → Graph row → Chainlink close → Ledger prompt → flatten. Solo book on the live site. Other tools can query the same record later.

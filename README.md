@@ -1,28 +1,26 @@
 # TradeCharts Attest
 
-**Structure oracle. The map is the stop.**
+The chart, the wallet, and the perp stop still live in three places. This repo is the open-source piece that connects them.
 
-Open-source claim layer for [TradeCharts](https://tradecharts.app) — ETHOnline 2026 Continuity.
-
-AI proposes market structure. A deterministic validator gates it. Confirm is attested. A **Chainlink** close kills it. **The Graph** serves the claim live. **Ledger** must approve before a flatten agent may move funds. The live desk is the first client — a risk monitor, not a signal bot.
-
-Live Alpha: **https://tradecharts.app**  
-This repo: **https://github.com/AiAlchemist0/tradecharts-attest**  
+ETHOnline 2026 Continuity. Live desk (Alpha): https://tradecharts.app  
+This repo: https://github.com/AiAlchemist0/tradecharts-attest  
 Spec: [docs/SPEC.md](docs/SPEC.md)
+
+Charts, venue stops, and wallet dashboards already exist. We do not claim they do not. What is missing is the join: a validated map tied to **your** book, a public record of aligned / fighting / unmapped, a kill on a **weekly close**, and a flatten that cannot add size.
 
 No shared git history with the commercial app.
 
-## Alpha (already on the site)
+## Alpha (on the site)
 
 Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wyckoff / Fib / internals / events / indicators. Validator is the render gate. Confirm is still private JSON. The book does not flatten.
 
-## Beta (this event)
+## This event (Beta on the live desk)
 
-| Layer | Module | Sponsor (load-bearing) |
+| | Module | Partner |
 | --- | --- | --- |
-| **See** | `src/policy/conflict.ts` | **The Graph** — subgraph of maps + `aligned` / `fighting` / `unmapped` / `insolvent`. Continuity AI: risk monitor / portfolio copilot. Live queries, not mocked. |
-| **Stand behind** | `src/policy/hash.ts` | **Chainlink** Data Streams / CRE — weekly **close** that invalidates. Commit–reveal hash. |
-| **Stop** | `src/policy/kill.ts` | **Ledger** Key Ring / HITL — flatten only, no leakable keys, no open/increase/rotate. |
+| **See** | `src/policy/conflict.ts` | **The Graph** — subgraph of maps + conflict. Live queries, not mocked. |
+| **Stand behind** | `src/policy/hash.ts` | **Chainlink** Data Streams / CRE — weekly close that invalidates. |
+| **Stop** | `src/policy/kill.ts` | **Ledger** — approve before flatten. Flatten only. |
 | **Validator** | `src/validator/` | Same gate as production. Copied, tested. |
 
 ## Run
@@ -32,13 +30,6 @@ npm install
 npm test
 ```
 
-## Law
-
-- Not a signal. Not a prediction. A *claim* with a kill.
-- Kill is a Chainlink **close**, not a wick.
-- Agent may only flatten matching risk, and only after Ledger (or documented fallback).
-- Graph is the query surface for other agents.
-
 ## Out of scope
 
-Private desk UI, store binaries, billing, copy-trading marketplace, Uniswap LP, Hedera x402 (unless the query API is later metered).
+Private desk UI, store binaries, billing, copy-trading, Uniswap LP, Hedera pay-per-query.
