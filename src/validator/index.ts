@@ -16,6 +16,7 @@ import type {
 } from "./types";
 
 export type {
+  AdvisoryReport,
   MeasureBounds,
   MeasureLast,
   Proposal,
@@ -27,6 +28,9 @@ export type {
   WavePattern,
   WavePivot,
 } from "./types";
+
+export { applyAdvisory, parseAdvisory } from "./judge";
+export type { AdvisoryPayload } from "./judge";
 
 export function structureOf(pattern: WavePattern): "impulse" | "corrective" {
   return pattern === "impulse" ? "impulse" : "corrective";

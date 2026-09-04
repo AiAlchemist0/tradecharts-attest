@@ -20,10 +20,16 @@ export type RuleResult = {
   severity: Severity;
 };
 
+export type AdvisoryReport = {
+  ran: boolean;
+  agree: boolean | null;
+};
+
 export type ValidationResult = {
   severity: Severity;
   reasonClass: ReasonClass;
   rules: RuleResult[];
+  advisory?: AdvisoryReport;
 };
 
 /** Working-range extremes from the measure packet. Optional — skip S5 when absent. */

@@ -1,4 +1,4 @@
-export { extractJson, parseProposal, validatePivots, validateProposal } from "./validator/index";
+export { applyAdvisory, extractJson, parseProposal, validatePivots, validateProposal } from "./validator/index";
 export type { Proposal, ValidationResult, WavePattern, WavePivot } from "./validator/types";
 export { canonicalize, mapHash } from "./policy/hash";
 export type { MapCommit } from "./policy/hash";
