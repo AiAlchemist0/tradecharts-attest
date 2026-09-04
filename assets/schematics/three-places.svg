@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="460" viewBox="0 0 1100 460" role="img" aria-label="The chart, the wallet, and the perp stop live in three places">
+  <rect width="1100" height="460" rx="16" fill="#080809"/>
+  <rect x="0.75" y="0.75" width="1098.5" height="458.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
+  <text x="40" y="42" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3.2" fill="#c4a06a">THE PROBLEM</text>
+  <text x="40" y="78" font-family="Georgia, 'Iowan Old Style', Times New Roman, serif" font-size="28" fill="#ecece8">Three tools. No join.</text>
+  <text x="40" y="106" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="14" fill="#8b8b86">A call is a screenshot. A stop fires on a wick. The bag never meets the map.</text>
+
+  <g>
+    <rect x="40" y="140" width="320" height="210" rx="14" fill="#111114" stroke="#3a342c"/>
+    <text x="200" y="172" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2.4" fill="#c4a06a">CHART</text>
+    <polyline fill="none" stroke="#f0ebe3" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" points="72,300 118,248 154,268 210,198 258,228 328,176"/>
+    <line x1="72" x2="328" y1="318" y2="318" stroke="#c4a06a" stroke-width="1.2" stroke-dasharray="6 6" opacity="0.55"/>
+    <text x="200" y="348" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Elliott · Wyckoff · a screenshot</text>
+  </g>
+
+  <g>
+    <rect x="390" y="140" width="320" height="210" rx="14" fill="#111114" stroke="#2a2a2e"/>
+    <text x="550" y="172" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2.4" fill="#c4a06a">WALLET</text>
+    <text x="550" y="232" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="15" fill="#ecece8">ETH · PENDLE · SCHIP</text>
+    <text x="550" y="258" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Spot + Hyperliquid · no policy</text>
+    <text x="550" y="318" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#5c5c58">unmapped</text>
+    <text x="550" y="348" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">The bag is the watchlist</text>
+  </g>
+
+  <g>
+    <rect x="740" y="140" width="320" height="210" rx="14" fill="#111114" stroke="#2a2a2e"/>
+    <text x="900" y="172" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2.4" fill="#c4a06a">PERP STOP</text>
+    <line x1="780" x2="1020" y1="248" y2="248" stroke="#d45b4a" stroke-width="1.6" stroke-dasharray="5 5"/>
+    <polyline fill="none" stroke="#f0ebe3" stroke-width="2.2" stroke-linejoin="round" points="780,220 830,210 880,226 930,168 980,252 1020,238"/>
+    <circle cx="930" cy="168" r="4" fill="#d45b4a"/>
+    <text x="900" y="288" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#d45b4a">fires on the wick</text>
+    <text x="900" y="348" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Hyperliquid mark / stop</text>
+  </g>
+
+  <line x1="360" y1="245" x2="390" y2="245" stroke="#5c5c58" stroke-width="1.2" stroke-dasharray="4 6"/>
+  <line x1="710" y1="245" x2="740" y2="245" stroke="#5c5c58" stroke-width="1.2" stroke-dasharray="4 6"/>
+
+  <rect x="40" y="372" width="1020" height="56" rx="10" fill="#111114" stroke="#c4a06a" stroke-opacity="0.45"/>
+  <text x="550" y="406" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="16" fill="#ecece8">The join · bag ⋈ map · close-kill, not a wick</text>
+</svg>

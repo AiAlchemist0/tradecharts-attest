@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480" role="img" aria-label="A Wyckoff spring takes the wick-stop; the weekly close stays above the kill">
+  <rect width="1100" height="480" rx="16" fill="#080809"/>
+  <rect x="0.75" y="0.75" width="1098.5" height="478.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
+  <text x="40" y="42" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3.2" fill="#c4a06a">WYCKOFF · CLOSE-KILL</text>
+  <text x="40" y="78" font-family="Georgia, 'Iowan Old Style', Times New Roman, serif" font-size="28" fill="#ecece8">A wick is not the trend dying.</text>
+  <text x="40" y="106" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="14" fill="#8b8b86">Spring tags liquidity under the range. Venue stop fires. Weekly close holds the thesis.</text>
+
+  <!-- chart pane -->
+  <rect x="40" y="128" width="720" height="312" rx="12" fill="#0c0c0e" stroke="#2a2a2e"/>
+  <g stroke="#2a2a2e" stroke-width="1" fill="none">
+    <line x1="72" x2="732" y1="188" y2="188"/>
+    <line x1="72" x2="732" y1="248" y2="248"/>
+    <line x1="72" x2="732" y1="308" y2="308"/>
+    <line x1="72" x2="732" y1="368" y2="368"/>
+  </g>
+  <!-- range box -->
+  <rect x="180" y="168" width="420" height="148" fill="#3dbe8c" fill-opacity="0.07" stroke="#3dbe8c" stroke-opacity="0.35"/>
+  <text x="198" y="188" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#b8956a">ICE</text>
+  <text x="198" y="328" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#8fa3b8">CREEK</text>
+
+  <!-- structure path + spring wick -->
+  <polyline fill="none" stroke="#f0ebe3" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"
+    points="80,220 140,250 180,316 260,196 340,300 420,280 500,292 560,400 620,276 700,250 740,242"/>
+  <!-- spring wick stem -->
+  <line x1="560" y1="292" x2="560" y2="400" stroke="#d45b4a" stroke-width="2"/>
+  <circle cx="560" cy="400" r="5" fill="#d45b4a"/>
+  <text x="560" y="424" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#d45b4a">SPRING</text>
+
+  <!-- HL stop at the wick -->
+  <line x1="72" x2="732" y1="400" y2="400" stroke="#d45b4a" stroke-width="1.3" stroke-dasharray="5 5" opacity="0.85"/>
+  <text x="724" y="394" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#d45b4a">HL STOP · wick</text>
+
+  <!-- weekly kill (close) above the spring -->
+  <line x1="72" x2="732" y1="348" y2="348" stroke="#c4a06a" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <text x="724" y="342" text-anchor="end" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#c4a06a">KILL · weekly close</text>
+
+  <!-- close holds -->
+  <circle cx="700" cy="250" r="5" fill="#3dbe8c"/>
+  <text x="700" y="238" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#3dbe8c">CLOSE</text>
+
+  <!-- legend cards -->
+  <g>
+    <rect x="780" y="128" width="280" height="140" rx="12" fill="#111114" stroke="#d45b4a" stroke-opacity="0.4"/>
+    <text x="920" y="164" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#d45b4a">VENUE TODAY</text>
+    <text x="920" y="200" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#ecece8">Flattened</text>
+    <text x="800" y="232" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Stop fires on the spring.</text>
+    <text x="800" y="252" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Thesis still valid on the week.</text>
+  </g>
+  <g>
+    <rect x="780" y="284" width="280" height="156" rx="12" fill="#111114" stroke="#c4a06a" stroke-opacity="0.45"/>
+    <text x="920" y="320" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#c4a06a">THIS DESK</text>
+    <text x="920" y="356" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="18" fill="#ecece8">Hold</text>
+    <text x="800" y="388" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Kill waits for a close through.</text>
+    <text x="800" y="408" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">We do not claim the print was fake.</text>
+  </g>
+</svg>

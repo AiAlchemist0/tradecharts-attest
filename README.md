@@ -45,6 +45,13 @@ Wallet-native traders (Kai). Spot on Ethereum / Arbitrum / Base, perps on Hyperl
 
 See / Stand behind / Stop is how we close those four.
 
+<p align="center">
+  <img src="assets/schematics/three-places.svg" width="100%" alt="The chart, the wallet, and the perp stop live in three places" />
+</p>
+<p align="center">
+  <img src="assets/schematics/spring-kill.svg" width="100%" alt="A Wyckoff spring takes the wick-stop; the weekly close holds the kill" />
+</p>
+
 ## Architecture
 
 <p align="center">
@@ -52,6 +59,10 @@ See / Stand behind / Stop is how we close those four.
 </p>
 
 How the join works, what lives in this repo, and how the live desk consumes it without this tree including the commercial app: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+<p align="center">
+  <img src="assets/schematics/compose.svg" width="100%" alt="Compose joins the standardized bag with confirmed maps" />
+</p>
 
 ## Live desk
 
@@ -77,6 +88,10 @@ Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wycko
 | **Stand behind** | `src/policy/hash.ts` | **Chainlink** Data Streams / CRE — weekly close that invalidates. |
 | **Stop** | `src/policy/kill.ts` | **Ledger** — approve before flatten. Flatten only. |
 | **Validator** | `src/validator/` | Same gate as production. Copied, tested. |
+
+<p align="center">
+  <img src="assets/schematics/see-stand-stop.svg" width="100%" alt="See, Stand behind, Stop — The Graph, Chainlink, Ledger" />
+</p>
 
 <p align="center">
   <img src="assets/screenshots/04-conflict.png" width="100%" alt="Conflict board — aligned, fighting, unmapped" />

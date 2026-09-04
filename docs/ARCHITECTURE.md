@@ -6,6 +6,9 @@ ETHOnline 2026 Continuity. This repo is the **open-source join**. The live desk 
 
 ![Join](../assets/architecture.svg)
 
+![See / Stand behind / Stop](../assets/schematics/see-stand-stop.svg)
+![Bag ⋈ map](../assets/schematics/compose.svg)
+
 ```mermaid
 flowchart LR
   desk[Live desk]
