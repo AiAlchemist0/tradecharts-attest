@@ -16,8 +16,8 @@ Kill (`src/policy/kill.ts`): flatten only on a **close** through the kill, and o
 
 ## Event wiring
 
-1. **The Graph** — subgraph of claims + conflict. Consume live.
-2. **Chainlink** — Data Streams / CRE weekly close sets `invalidated`.
+1. **The Graph** — two live products: a *standardized* token/balance subgraph (bag) **and** our maps subgraph. `compose.ts` joins them. Not one homemade subgraph.
+2. **Chainlink** — CRE Confidential Workflow (`handlerInTee`) is flatten; same run writes onchain.
 3. **Ledger** — device approval before flatten.
 
 ## Desk (this event)

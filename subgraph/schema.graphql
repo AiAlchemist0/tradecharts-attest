@@ -1,0 +1,38 @@
+"""Confirmed wave map. Indexed on Confirm. Event work — not the commercial desk."""
+type Map @entity(immutable: false) {
+  id: ID!
+  wallet: Bytes!
+  symbol: String!
+  timeframe: String!
+  side: String!
+  longKill: BigDecimal
+  shortKill: BigDecimal
+  barTime: BigInt!
+  mapHash: Bytes!
+  positioned: Boolean!
+  txHash: Bytes!
+  createdAt: BigInt!
+}
+
+type MapPivot @entity(immutable: true) {
+  id: ID!
+  map: Map!
+  label: String!
+  price: BigDecimal!
+  time: BigInt!
+  anchor: String!
+  kind: String!
+}
+
+"""Wallet × symbol conflict after compose (bag ⋈ map)."""
+type Conflict @entity(immutable: false) {
+  id: ID!
+  wallet: Bytes!
+  symbol: String!
+  spot: BigDecimal!
+  perp: BigDecimal!
+  liq: BigDecimal
+  bias: String!
+  status: String!
+  updatedAt: BigInt!
+}

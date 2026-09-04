@@ -1,3 +1,4 @@
 node_modules/
+.env
 assets/cover.svg
 assets/cover-wide.svg

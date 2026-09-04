@@ -1,0 +1,7 @@
+specVersion: 1.2.0
+schema:
+  file: ./schema.graphql
+dataSources: []
+# Wire a Confirm/Kill event source on Base Sepolia when the contract exists.
+# Until then this schema is the contract for compose.ts and Studio deploy.
+description: TradeCharts maps + conflict. ETHOnline 2026 Continuity.

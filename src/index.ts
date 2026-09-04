@@ -6,3 +6,7 @@ export { conflictOf } from "./policy/conflict";
 export type { BookRow, Conflict, MapBias } from "./policy/conflict";
 export { killAction, mayAgent } from "./policy/kill";
 export type { KillAction, KillPrint } from "./policy/kill";
+export { compose } from "./graph/compose";
+export type { ComposedRow, MapRow, PerpRow } from "./graph/compose";
+export { fetchStandardBag } from "./graph/standard";
+export { fetchComposed, fetchMaps } from "./graph/queries";
