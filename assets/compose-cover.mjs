@@ -27,7 +27,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
     </linearGradient>
   </defs>
   <rect x="48" y="48" width="64" height="64" rx="14" fill="#111114" stroke="#3a342c" stroke-width="2"/>
-  <path d="M62 90 L74 68 L82 78 L98 52 L110 64" fill="none" stroke="#d8d4cc" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 98 L72 76 L80 88 L92 62 L100 72" fill="none" stroke="#d8d4cc" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="132" y="78" font-family="Georgia, Times New Roman, serif" font-size="40" letter-spacing="8" fill="#ecece8">TRADECHARTS</text>
   <text x="132" y="106" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="4" fill="#c4a06a">THE MAP IS THE STOP</text>
   <text x="48" y="188" font-family="ui-sans-serif, Segoe UI, Helvetica, Arial, sans-serif" font-size="28" fill="#ecece8">Elliott. Wyckoff. Your book.</text>
@@ -75,7 +75,7 @@ const wide = `<?xml version="1.0" encoding="UTF-8"?>
     </linearGradient>
   </defs>
   <rect x="36" y="36" width="52" height="52" rx="12" fill="#111114" stroke="#3a342c" stroke-width="1.8"/>
-  <path d="M48 72 L58 54 L64 62 L76 42 L86 52" fill="none" stroke="#d8d4cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M46 76 L56 58 L62 67 L72 48 L78 56" fill="none" stroke="#d8d4cc" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="102" y="58" font-family="Georgia, Times New Roman, serif" font-size="28" letter-spacing="6" fill="#ecece8">TRADECHARTS</text>
   <text x="102" y="80" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="3" fill="#c4a06a">THE MAP IS THE STOP</text>
   <text x="36" y="140" font-family="ui-sans-serif, Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#ecece8">Elliott. Wyckoff. Your book.</text>
