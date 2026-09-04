@@ -12,7 +12,6 @@
   <line x1="80" x2="1120" y1="980" y2="980" stroke="#c4a06a" stroke-width="2" stroke-dasharray="10 8" opacity="0.5"/>
   <rect x="390" y="290" width="420" height="420" rx="72" fill="#111114" stroke="#3a342c" stroke-width="8"/>
   <path d="M500 620 L560 490 L630 555 L700 410 L740 470" fill="none" stroke="#d8d4cc" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="700" cy="410" r="12" fill="#3dbe8c"/>
   <text x="600" y="820" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="72" letter-spacing="18" fill="#ecece8">TRADECHARTS</text>
   <text x="600" y="880" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" letter-spacing="8" fill="#8b8b86">THE MAP IS THE STOP</text>
 </svg>
