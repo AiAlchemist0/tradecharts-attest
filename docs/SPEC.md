@@ -14,6 +14,8 @@ Conflict (`src/policy/conflict.ts`): `unmapped` | `aligned` | `fighting` | `inso
 
 Kill (`src/policy/kill.ts`): flatten only on a **close** through the kill, and only if net is still on that side. Flatten only — no open, add, or rotate.
 
+Hostile ERC-20 names in the standardized bag are dropped before compose (`src/safety/token.ts`). They must not become a flatten `symbol`. Secrets stay out of git — [docs/SECURITY.md](SECURITY.md).
+
 ## Event wiring
 
 1. **The Graph** — two live products: a *standardized* token/balance subgraph (bag) **and** our maps subgraph. `compose.ts` joins them. Not one homemade subgraph.

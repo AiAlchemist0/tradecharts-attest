@@ -48,3 +48,7 @@ Candles, SIWE, read-only book, Propose → validator → Confirm. Confirm is sti
 - **Ledger** — device confirm after the TEE, before funds.
 
 Kill is a **close**, not a wick. Not a signal.
+
+## Security
+
+The join is the attack surface. Bag metadata is hostile; flatten cannot add size; maps come from Confirm. [docs/SECURITY.md](SECURITY.md).

@@ -1,4 +1,5 @@
 import { conflictOf, type BookRow, type Conflict, type MapBias } from "../policy/conflict";
+import { isBlockedToken } from "../safety/token";
 import type { StandardBagToken } from "./standard";
 
 export type MapRow = {
@@ -40,18 +41,21 @@ export function compose(opts: {
   const keys = new Set<string>();
   const bagBy = new Map<string, number>();
   for (const t of opts.bag) {
+    if (isBlockedToken({ symbol: t.symbol, address: t.contract ?? undefined })) continue;
     const k = norm(t.symbol);
     keys.add(k);
     bagBy.set(k, (bagBy.get(k) ?? 0) + t.amount);
   }
   const mapBy = new Map<string, MapRow>();
   for (const m of opts.maps) {
+    if (isBlockedToken({ symbol: m.symbol })) continue;
     const k = norm(m.symbol);
     keys.add(k);
     mapBy.set(k, m);
   }
   const perpBy = new Map<string, PerpRow>();
   for (const p of opts.perps ?? []) {
+    if (isBlockedToken({ symbol: p.symbol })) continue;
     const k = norm(p.symbol);
     keys.add(k);
     perpBy.set(k, p);

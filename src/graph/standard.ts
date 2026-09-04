@@ -4,7 +4,10 @@
  * balances subgraph.
  *
  * Set GRAPH_STANDARD_SUBGRAPH_ID to a live Studio / Market id.
+ * Never commit GRAPH_API_KEY.
  */
+
+import { isBlockedToken, isEthAddress } from "../safety/token";
 
 export type StandardBagToken = {
   symbol: string;
@@ -31,6 +34,7 @@ export async function fetchStandardBag(
   wallet: string,
   cfg: GraphConfig,
 ): Promise<StandardBagToken[]> {
+  if (!isEthAddress(wallet)) throw new Error("bad wallet");
   const url = `${cfg.gatewayUrl.replace(/\/$/, "")}/${cfg.apiKey}/subgraphs/id/${cfg.subgraphId}`;
   const res = await fetch(url, {
     method: "POST",
@@ -53,9 +57,11 @@ export async function fetchStandardBag(
     throw new Error(json.errors.map((e) => e.message).join("; "));
   }
   const rows = json.data?.tokenBalances ?? [];
-  return rows.map((r) => ({
-    symbol: r.token.symbol.toUpperCase(),
-    amount: Number(r.value) || 0,
-    contract: r.token.id,
-  }));
+  return rows
+    .map((r) => ({
+      symbol: r.token.symbol.toUpperCase(),
+      amount: Number(r.value) || 0,
+      contract: r.token.id,
+    }))
+    .filter((t) => !isBlockedToken({ symbol: t.symbol, address: t.contract ?? undefined }));
 }

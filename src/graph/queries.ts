@@ -1,3 +1,4 @@
+import { isEthAddress } from "../safety/token";
 import { compose, type ComposedRow, type MapRow, type PerpRow } from "./compose";
 import { fetchStandardBag, type GraphConfig } from "./standard";
 
@@ -21,6 +22,7 @@ function biasFromSide(side: string): MapRow["bias"] {
 }
 
 export async function fetchMaps(wallet: string, cfg: MapsConfig): Promise<MapRow[]> {
+  if (!isEthAddress(wallet)) throw new Error("bad wallet");
   const url = `${cfg.gatewayUrl.replace(/\/$/, "")}/${cfg.apiKey}/subgraphs/id/${cfg.subgraphId}`;
   const res = await fetch(url, {
     method: "POST",

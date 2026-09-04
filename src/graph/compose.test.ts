@@ -11,6 +11,18 @@ describe("compose", () => {
     expect(rows[0]?.status).toBe("fighting");
   });
 
+  it("drops airdrop / phishing bag tickers before join", () => {
+    const rows = compose({
+      bag: [
+        { symbol: "ETH", amount: 1, contract: null },
+        { symbol: "UDTMESUSCIRCLECLAIMUNTIL280625", amount: 1e18, contract: "0xdead" },
+      ],
+      maps: [{ symbol: "ETH-USD", bias: "long", longKill: 2800, shortKill: null }],
+    });
+    expect(rows.map((r) => r.symbol)).toEqual(["ETH"]);
+    expect(rows[0]?.status).toBe("aligned");
+  });
+
   it("marks exposure with no map as unmapped", () => {
     const rows = compose({
       bag: [{ symbol: "SOL", amount: 10, contract: null }],

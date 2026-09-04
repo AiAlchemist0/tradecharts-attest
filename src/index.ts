@@ -10,3 +10,4 @@ export { compose } from "./graph/compose";
 export type { ComposedRow, MapRow, PerpRow } from "./graph/compose";
 export { fetchStandardBag } from "./graph/standard";
 export { fetchComposed, fetchMaps } from "./graph/queries";
+export { isBlockedToken, isEthAddress } from "./safety/token";
