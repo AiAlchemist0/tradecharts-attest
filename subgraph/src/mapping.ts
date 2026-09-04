@@ -1,8 +1,7 @@
+import { Attested } from "../generated/EAS/EAS"
+
 /**
- * Graph mappings. Fill when MapConfirmed / KillSettled is deployed on Base Sepolia.
- * Until then compose.ts can still join a standardized bag subgraph with maps
- * ingested via subgraph.yaml once a data source is added.
+ * Bootstrap: listen to Base Sepolia EAS. Map/Conflict entities are written
+ * once MapConfirmed is deployed; this handler keeps the subgraph syncing.
  */
-export function handleMapConfirmed(): void {
-  // Placeholder — implement with graph-ts when the event ABI ships.
-}
+export function handleAttested(_event: Attested): void {}

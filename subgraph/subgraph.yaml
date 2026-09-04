@@ -1,7 +1,26 @@
 specVersion: 1.2.0
 schema:
   file: ./schema.graphql
-dataSources: []
-# Wire a Confirm/Kill event source on Base Sepolia when the contract exists.
-# Until then this schema is the contract for compose.ts and Studio deploy.
-description: TradeCharts maps + conflict. ETHOnline 2026 Continuity.
+description: TradeCharts maps + conflict. ETHOnline 2026 Continuity. Bootstrap indexes Base Sepolia EAS until MapConfirmed is deployed.
+dataSources:
+  - kind: ethereum
+    name: EAS
+    network: base-sepolia
+    source:
+      address: "0x4200000000000000000000000000000000000021"
+      abi: EAS
+      startBlock: 46392400
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Map
+        - Conflict
+      abis:
+        - name: EAS
+          file: ./abis/EAS.json
+      eventHandlers:
+        - event: Attested(indexed address,indexed address,bytes32,indexed bytes32)
+          handler: handleAttested
+      file: ./src/mapping.ts

@@ -1,0 +1,7 @@
+{
+  "name": "tradecharts-maps-subgraph",
+  "private": true,
+  "dependencies": {
+    "@graphprotocol/graph-ts": "0.37.0"
+  }
+}
