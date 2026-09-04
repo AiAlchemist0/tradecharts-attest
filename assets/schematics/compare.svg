@@ -1,11 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-label="TradeCharts versus TradingView, Binance, Hyperliquid, and DeBank">
-  <rect width="1100" height="560" rx="16" fill="#080809"/>
-  <rect x="0.75" y="0.75" width="1098.5" height="558.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img" aria-label="TradeCharts versus TradingView, Binance, Hyperliquid, and DeBank">
+  <rect width="1100" height="640" rx="16" fill="#080809"/>
+  <rect x="0.75" y="0.75" width="1098.5" height="638.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
   <text x="40" y="42" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3.2" fill="#c4a06a">THE JOIN</text>
   <text x="40" y="78" font-family="Georgia, 'Iowan Old Style', Times New Roman, serif" font-size="26" fill="#ecece8">Not another chart. The missing pane.</text>
-  <text x="40" y="106" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="13" fill="#8b8b86">Wallet-native traders already have a thesis and a book. The tools that hold each piece do not meet.</text>
+  <text x="40" y="106" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="13" fill="#8b8b86">AI proposes. You Confirm. An optional close-kill may flatten matching risk — it cannot add size.</text>
 
-  <!-- header row -->
   <rect x="40" y="128" width="1060" height="44" rx="8" fill="#111114"/>
   <text x="56" y="156" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" fill="#5c5c58">JOB</text>
   <text x="430" y="156" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">TradingView</text>
@@ -14,7 +13,6 @@
   <text x="865" y="156" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">DeBank</text>
   <text x="1010" y="156" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#c4a06a">TradeCharts</text>
 
-  <!-- rows -->
   <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="13">
     <text x="56" y="204" fill="#ecece8">Coin-volume tape, 24/7 week</text>
     <text x="430" y="204" text-anchor="middle" fill="#5c5c58">often USD vol</text>
@@ -32,45 +30,54 @@
     <text x="1010" y="252" text-anchor="middle" fill="#3dbe8c">SIWE bag</text>
 
     <line x1="40" x2="1100" y1="272" y2="272" stroke="#2a2a2e"/>
-    <text x="56" y="300" fill="#ecece8">Refuse a broken Elliott count</text>
-    <text x="430" y="300" text-anchor="middle" fill="#5c5c58">Pine scripts</text>
+    <text x="56" y="300" fill="#ecece8">AI proposes the weekly map</text>
+    <text x="430" y="300" text-anchor="middle" fill="#5c5c58">Copilot / Pine</text>
     <text x="575" y="300" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="720" y="300" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="865" y="300" text-anchor="middle" fill="#5c5c58">—</text>
-    <text x="1010" y="300" text-anchor="middle" fill="#3dbe8c">validator</text>
+    <text x="1010" y="300" text-anchor="middle" fill="#3dbe8c">Propose / Analyse</text>
 
     <line x1="40" x2="1100" y1="320" y2="320" stroke="#2a2a2e"/>
-    <text x="56" y="348" fill="#ecece8">Human Confirm — not a signal</text>
-    <text x="430" y="348" text-anchor="middle" fill="#5c5c58">alert / script</text>
+    <text x="56" y="348" fill="#ecece8">Refuse a broken Elliott count</text>
+    <text x="430" y="348" text-anchor="middle" fill="#5c5c58">scripts can lie</text>
     <text x="575" y="348" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="720" y="348" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="865" y="348" text-anchor="middle" fill="#5c5c58">—</text>
-    <text x="1010" y="348" text-anchor="middle" fill="#3dbe8c">you Confirm</text>
+    <text x="1010" y="348" text-anchor="middle" fill="#3dbe8c">validator</text>
 
     <line x1="40" x2="1100" y1="368" y2="368" stroke="#2a2a2e"/>
-    <text x="56" y="396" fill="#ecece8">Bag ⋈ map — fighting / unmapped</text>
-    <text x="430" y="396" text-anchor="middle" fill="#5c5c58">—</text>
+    <text x="56" y="396" fill="#ecece8">Human Confirm — not a signal</text>
+    <text x="430" y="396" text-anchor="middle" fill="#5c5c58">alert / script</text>
     <text x="575" y="396" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="720" y="396" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="865" y="396" text-anchor="middle" fill="#5c5c58">—</text>
-    <text x="1010" y="396" text-anchor="middle" fill="#3dbe8c">compose</text>
+    <text x="1010" y="396" text-anchor="middle" fill="#3dbe8c">you Confirm</text>
 
     <line x1="40" x2="1100" y1="416" y2="416" stroke="#2a2a2e"/>
-    <text x="56" y="444" fill="#ecece8">Kill on a weekly close, not a wick</text>
-    <text x="430" y="444" text-anchor="middle" fill="#5c5c58">optional alert</text>
-    <text x="575" y="444" text-anchor="middle" fill="#d45b4a">mark / wick</text>
-    <text x="720" y="444" text-anchor="middle" fill="#d45b4a">mark / wick</text>
+    <text x="56" y="444" fill="#ecece8">Bag ⋈ map — fighting / unmapped</text>
+    <text x="430" y="444" text-anchor="middle" fill="#5c5c58">—</text>
+    <text x="575" y="444" text-anchor="middle" fill="#5c5c58">—</text>
+    <text x="720" y="444" text-anchor="middle" fill="#5c5c58">—</text>
     <text x="865" y="444" text-anchor="middle" fill="#5c5c58">—</text>
-    <text x="1010" y="444" text-anchor="middle" fill="#c4a06a">close-kill</text>
+    <text x="1010" y="444" text-anchor="middle" fill="#3dbe8c">compose</text>
 
     <line x1="40" x2="1100" y1="464" y2="464" stroke="#2a2a2e"/>
-    <text x="56" y="492" fill="#ecece8">Flatten only — cannot add size</text>
-    <text x="430" y="492" text-anchor="middle" fill="#5c5c58">—</text>
-    <text x="575" y="492" text-anchor="middle" fill="#5c5c58">full trade</text>
-    <text x="720" y="492" text-anchor="middle" fill="#5c5c58">full trade</text>
+    <text x="56" y="492" fill="#ecece8">Kill on a weekly close, not a wick</text>
+    <text x="430" y="492" text-anchor="middle" fill="#5c5c58">optional alert</text>
+    <text x="575" y="492" text-anchor="middle" fill="#d45b4a">mark / wick</text>
+    <text x="720" y="492" text-anchor="middle" fill="#d45b4a">mark / wick</text>
     <text x="865" y="492" text-anchor="middle" fill="#5c5c58">—</text>
-    <text x="1010" y="492" text-anchor="middle" fill="#c4a06a">this event</text>
+    <text x="1010" y="492" text-anchor="middle" fill="#c4a06a">close-kill</text>
+
+    <line x1="40" x2="1100" y1="512" y2="512" stroke="#2a2a2e"/>
+    <text x="56" y="540" fill="#ecece8">Opt-in kill switch — flatten matching risk</text>
+    <text x="430" y="540" text-anchor="middle" fill="#5c5c58">webhook bots</text>
+    <text x="575" y="540" text-anchor="middle" fill="#5c5c58">full trade</text>
+    <text x="720" y="540" text-anchor="middle" fill="#5c5c58">full trade</text>
+    <text x="865" y="540" text-anchor="middle" fill="#5c5c58">—</text>
+    <text x="1010" y="540" text-anchor="middle" fill="#c4a06a">this event</text>
   </g>
 
-  <text x="40" y="536" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">We do not replace TradingView or Binance. We join the chart, the bag, and the stop so a spring cannot take a still-valid map.</text>
+  <text x="40" y="584" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">AI does not trade for you. It proposes a map; the validator can refuse it; you Confirm the kill. Flatten is opt-in, close-only, reduce-only — Ledger in the loop.</text>
+  <text x="40" y="608" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">We do not replace TradingView or Binance. We join the chart, the bag, and the stop so a spring cannot take a still-valid map.</text>
 </svg>

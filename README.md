@@ -49,19 +49,22 @@ See / Stand behind / Stop is how we close those four. Phishing ERC-20s (visit / 
 
 **Segment:** wallet-native crypto traders who already have a structure thesis (Elliott / Wyckoff) and a live book (EVM spot + Hyperliquid). Not “another overlay.” Not an exchange. Not a bag dashboard.
 
-The adjacent products each own one pane. TradingView owns the chart (alerts can wait for bar close; they still do not flatten *your* perp). Binance and Hyperliquid own execution and **mark/wick** stops. DeBank / Zerion own the bag with no map. MotiveWave owns desktop Elliott with no wallet. Pine “Elliott” scripts can draw a broken count. Nobody answers *is this book fighting its own map?*
+The adjacent products each own one pane. TradingView owns the chart (Copilot / Pine; alerts can wait for bar close; they still do not flatten *your* perp). Binance and Hyperliquid own execution and **mark/wick** stops. DeBank / Zerion own the bag with no map. Nobody answers *is this book fighting its own map?*
+
+AI is a job on this desk, not a chatbot bolted on. **Propose / Analyse** draft a weekly map; the validator can refuse it; **you Confirm**. That Confirm can arm an **opt-in kill switch**: on a weekly *close* through the kill, matching Hyperliquid risk may flatten. It cannot add size, open, or rotate. Ledger confirms before funds. It is not unsupervised “AI trading,” and it is not a promise to save every position.
 
 | Job | TradingView | Binance | Hyperliquid | DeBank | TradeCharts |
 |---|---|---|---|---|---|
 | Coin-volume tape, 24/7 week | often USD vol | yes | yes | — | Binance coins |
 | Your bag is the watchlist | — | exchange acct | perps | yes | SIWE bag |
-| Refuse a broken Elliott count | Pine scripts | — | — | — | validator |
+| AI proposes the weekly map | Copilot / Pine | — | — | — | Propose / Analyse |
+| Refuse a broken Elliott count | scripts can lie | — | — | — | validator |
 | Human Confirm — not a signal | alert / script | — | — | — | you Confirm |
 | Bag ⋈ map (fighting / unmapped) | — | — | — | — | compose |
 | Kill on a **weekly close**, not a wick | optional alert | mark / wick | mark / wick | — | close-kill |
-| Flatten only — cannot add size | — | full trade | full trade | — | this event |
+| Opt-in kill switch — flatten matching risk | webhook bots | full trade | full trade | — | this event |
 
-We do not replace those tools. We join them. Close-kill flatten is this event (Beta); Alpha already maps and reads the book.
+We do not replace those tools. We join them. Propose / Analyse is Alpha. Close-kill flatten is this event (Beta).
 
 <p align="center">
   <img src="assets/schematics/compare.svg" width="100%" alt="TradeCharts versus TradingView, Binance, Hyperliquid, and DeBank" />
