@@ -12,6 +12,19 @@ ETHOnline 2026 Continuity. Live desk: [tradecharts.app](https://tradecharts.app)
 
 The open-source join between the chart, the wallet, and the stop. No shared git history with the commercial desk.
 
+## Who this is for
+
+**Beginners and professionals. One desk.** Crypto.com counted ~**774 million** crypto owners by H1 2026. Most hold. A smaller set is active onchain. We design for people who trade *or are learning the chart* — and need a map on the coins they actually hold.
+
+The agent **analyses and educates**. Propose drafts a weekly map. Ask AI walks the story the OHLC is telling (why this kill, why a spring is not the trend dying). You Confirm. Interpretive map — not a signal, not advice.
+
+<p align="center">
+  <img src="assets/schematics/who.svg" width="100%" alt="Who TradeCharts is for — beginners, TV professionals, wallet-native traders" />
+</p>
+<p align="center">
+  <img src="assets/schematics/story.svg" width="100%" alt="Data tells a story. AI analyses and educates. You Confirm." />
+</p>
+
 ## The problem
 
 The chart, the wallet, and the perp stop still live in three places. A call is a screenshot. A Hyperliquid stop fires on mark and **wicks**. Nothing answers: *is this book fighting its own map?*
