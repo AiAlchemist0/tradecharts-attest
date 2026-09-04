@@ -71,6 +71,7 @@ AI is a job on this desk, not a chatbot bolted on. **Propose / Analyse** draft a
 | Coin-volume tape, 24/7 week | often USD vol | yes | yes | — | Binance coins |
 | Your bag is the watchlist | — | exchange acct | perps | yes | SIWE bag |
 | AI proposes the weekly map | Copilot / Pine | — | — | — | Propose / Analyse |
+| AI educates the tape’s story | help docs | academy | — | — | Ask AI |
 | Refuse a broken Elliott count | scripts can lie | — | — | — | validator |
 | Human Confirm — not a signal | alert / script | — | — | — | you Confirm |
 | Bag ⋈ map (fighting / unmapped) | — | — | — | — | compose |
