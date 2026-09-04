@@ -6,14 +6,44 @@
 <p align="left">
   <img src="assets/logo.png" width="100" alt="TradeCharts logo" />
 </p>
-The chart, the wallet, and the perp stop still live in three places. This repo is the open-source piece that connects them.
 
-ETHOnline 2026 Continuity. Live desk (Alpha): https://tradecharts.app  
-Spec: [docs/SPEC.md](docs/SPEC.md) · Security: [docs/SECURITY.md](docs/SECURITY.md)
+ETHOnline 2026 Continuity. Live desk: [tradecharts.app](https://tradecharts.app)  
+[Spec](docs/SPEC.md) · [Architecture](docs/ARCHITECTURE.md) · [Security](docs/SECURITY.md)
 
-Charts, venue stops, and wallet dashboards already exist. We do not claim they do not. What is missing is the join: a validated map tied to **your** book, a public record of aligned / fighting / unmapped, a kill on a **weekly close**, and a flatten that cannot add size.
+The open-source join between the chart, the wallet, and the stop. No shared git history with the commercial desk.
 
-No shared git history with the commercial app.
+## The problem
+
+The chart, the wallet, and the perp stop still live in three places. A call is a screenshot. A Hyperliquid stop fires on mark and **wicks**. Nothing answers: *is this book fighting its own map?*
+
+Charts, venue stops, and wallet dashboards already exist. We do not claim they do not. What is missing is a map you can stand behind on **your** coins — and a kill that cannot be taken out by a print that was never a trend change.
+
+### Why a wick is not “the trend died”
+
+Wyckoff already named this. A **spring** (or an **upthrust**) is built to take stops: price tags liquidity beyond the range, then closes back inside. Composite operators hunt the obvious stop. The venue does exactly what they need — flatten on the wick — and the real trend continues.
+
+We do **not** claim we can prove a print was spoofed, washed, or “artificial.” That is unprovable from a chart, and it is not this product.
+
+We claim something narrower, and testable:
+
+- Invalidation is a **weekly close** through the kill, not a five-minute wick.
+- The bag sits next to the map: **aligned**, **fighting**, **unmapped**, or **insolvent** (liq inside a still-valid thesis).
+- Flatten can only reduce. It cannot add size, open, or rotate.
+
+Elliott is the structure. Wyckoff is the warning that a wick can be a hunt. The join is what makes that warning *act* on the book you actually hold.
+
+### Who this is for
+
+Wallet-native traders (Kai). Spot on Ethereum / Arbitrum / Base, perps on Hyperliquid. Thesis in their head or in Telegram. Not an equity guest, not a signals feed.
+
+| What they have | What goes wrong today |
+|---|---|
+| Long ETH perp, weekly map still valid | A spring wicks through the HL stop. They are flat. The week closes back in range. Stopped by the hunt, not the thesis. |
+| Confirmed Short on ETH, still holding ETH + a long | Three tools, no sentence that says **fighting**. They add size into their own kill. |
+| Pendle YT, staked CHIP, dust ETH — no Confirm | The bag *is* the watchlist, but there is no policy. Unmapped. A CLAIM airdrop token would have been a fourth row; we drop bait before compose. |
+| Liq sitting inside the weekly map | The position dies before the thesis does. That is **insolvent** — visible only if book and map share a pane. |
+
+See / Stand behind / Stop is how we close those four.
 
 ## Architecture
 

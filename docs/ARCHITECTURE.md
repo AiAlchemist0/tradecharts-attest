@@ -2,6 +2,8 @@
 
 ETHOnline 2026 Continuity. This repo is the **open-source join**. The live desk is a separate product at [tradecharts.app](https://tradecharts.app). No shared git history.
 
+**Problem:** chart, wallet, and perp stop live in three places. Venue stops fire on wicks (Wyckoff springs / upthrusts take those stops). Invalidation here is a weekly **close**; compose says whether the book is aligned, fighting, unmapped, or insolvent. We do not claim to detect spoofing. [README](../README.md#the-problem).
+
 ![Join](../assets/architecture.svg)
 
 ```mermaid

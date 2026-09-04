@@ -2,7 +2,7 @@
 
 ETHOnline 2026 Continuity. Ships onto https://tradecharts.app as crypto Beta.
 
-**Problem:** the chart, the wallet, and the perp stop still live in three places. Calls are screenshots, Hyperliquid stops fire on mark/wicks, and nothing can answer “is this book fighting its own map?”
+**Problem:** the chart, the wallet, and the perp stop still live in three places. Calls are screenshots. Hyperliquid stops fire on mark and wicks — the same print Wyckoff calls a spring or an upthrust (a stop-hunt, not a trend change). Nothing answers “is this book fighting its own map?” We do not claim we can prove a print was spoofed. We claim invalidation is a **weekly close**, and the bag next to the map must show aligned / fighting / unmapped / insolvent.
 
 Partners: **The Graph**, **Chainlink**, **Ledger** (Continuity prizes).
 
