@@ -2,12 +2,10 @@
   <img src="assets/cover.png" width="100%" alt="TradeCharts — Elliott. Wyckoff. Your book." />
 </p>
 
-<p align="center">
-  <img src="assets/logo.png" width="280" alt="TradeCharts logo" />
-</p>
-
 # TradeCharts Attest
-
+<p align="left">
+  <img src="assets/logo.png" width="100" alt="TradeCharts logo" />
+</p>
 The chart, the wallet, and the perp stop still live in three places. This repo is the open-source piece that connects them.
 
 ETHOnline 2026 Continuity. Live desk (Alpha): https://tradecharts.app  
