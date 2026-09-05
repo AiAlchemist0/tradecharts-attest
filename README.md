@@ -12,7 +12,7 @@ ETHOnline 2026 Continuity. Live desk: [tradecharts.app](https://tradecharts.app)
 
 The open-source join between the chart, the wallet, and the stop. No shared git history with the commercial desk.
 
-Landing [tradecharts.ai](https://tradecharts.ai) tells one loop: **See → Propose → Teach → Confirm → Stop.** AI drafts the weekly map. You Confirm. Teaching the wave count is the product. **Rules over vibes.**
+Landing [tradecharts.ai](https://tradecharts.ai) tells one loop: **See → Propose → Educate → Confirm → Stop.** AI drafts the weekly map. You Confirm. Educating on the wave count is the product. **Rules over vibes.**
 
 ## Who this is for
 
