@@ -28,7 +28,7 @@ Hostile ERC-20 names in the standardized bag are dropped before compose (`src/sa
 
 **Pre-existing (not hackathon work):** the commercial desk at https://tradecharts.app — Vite/React UI, Binance tape, SIWE login, wallet/Hyperliquid reads, the deterministic Elliott validator (`src/validator/`, copied here with tests), and Confirm as a private save.
 
-**This event:** both subgraphs, the compose join, the EAS-attested Map records, `demo/`, and the live Studio consume. Chainlink CRE and the Ledger gate are in progress this week. Nothing in this repo existed before ETHOnline 2026.
+**This event:** both subgraphs, the compose join, the MapConfirmed onchain records, `demo/`, and the live Studio consume. Chainlink CRE and the Ledger gate are in progress this week. Nothing in this repo existed before ETHOnline 2026.
 
 ## Run
 
