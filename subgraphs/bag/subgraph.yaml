@@ -1,0 +1,137 @@
+specVersion: 1.2.0
+schema:
+  file: ./schema.graphql
+description: TradeCharts bag subgraph. ERC-20 balances for a Base allowlist (WETH, USDC, cbBTC, DEGEN, VIRTUAL, DAI) from Transfer events in the indexed window. The bag side of the compose join (bag ⋈ maps); maps live in subgraph/.
+dataSources:
+  - kind: ethereum
+    name: WETH
+    network: base
+    source:
+      address: "0x4200000000000000000000000000000000000006"
+      abi: ERC20
+      startBlock: 47100000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+        - Token
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleWETH
+      file: ./src/mapping.ts
+  - kind: ethereum
+    name: USDC
+    network: base
+    source:
+      address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      abi: ERC20
+      startBlock: 47100000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+        - Token
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleUSDC
+      file: ./src/mapping.ts
+  - kind: ethereum
+    name: cbBTC
+    network: base
+    source:
+      address: "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf"
+      abi: ERC20
+      startBlock: 47100000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+        - Token
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handlecbBTC
+      file: ./src/mapping.ts
+  - kind: ethereum
+    name: DEGEN
+    network: base
+    source:
+      address: "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed"
+      abi: ERC20
+      startBlock: 47100000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+        - Token
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleDEGEN
+      file: ./src/mapping.ts
+  - kind: ethereum
+    name: VIRTUAL
+    network: base
+    source:
+      address: "0x0b3e328455c4059EEb9e3f84b5543F74E24e7E1b"
+      abi: ERC20
+      startBlock: 47100000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+        - Token
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleVIRTUAL
+      file: ./src/mapping.ts
+  - kind: ethereum
+    name: DAI
+    network: base
+    source:
+      address: "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb"
+      abi: ERC20
+      startBlock: 47100000
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+        - Token
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleDAI
+      file: ./src/mapping.ts

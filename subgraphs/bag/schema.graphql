@@ -1,0 +1,23 @@
+"""Token metadata (attacker-controlled fields never enter compose rows unchecked — see src/safety/token.ts)."""
+type Token @entity(immutable: true) {
+  id: ID!
+  symbol: String!
+  name: String
+  decimals: Int!
+}
+
+"""A wallet that has transferred an allowlisted token."""
+type Account @entity(immutable: false) {
+  id: ID!
+  balances: [Balance!]! @derivedFrom(field: "account")
+}
+
+"""ERC-20 balance per wallet × token, accumulated from Transfer events in the indexed window."""
+type Balance @entity(immutable: false) {
+  id: ID! # {account}|{token}
+  account: Account!
+  token: Token!
+  balance: BigInt!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+}
