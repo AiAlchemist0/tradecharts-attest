@@ -9,7 +9,13 @@ import { Transfer as VIRTUALTransfer } from "../generated/VIRTUAL/ERC20";
 import { Transfer as DAITransfer } from "../generated/DAI/ERC20";
 import { Account, Balance, Token } from "../generated/schema";
 
-const ZERO = Address.fromString("0x0000000000000000000000000000000000000000");
+// No top-level Address.fromString/Bytes.fromHexString: those host calls run at
+// WASM module-init and corrupt the heap (graph-node #6559) — the first store
+// lookup then fails with "unknown name when looking up entity type". Defer them
+// into functions called from handlers.
+function ZERO(): Address {
+  return Address.fromString("0x0000000000000000000000000000000000000000");
+}
 
 function getOrCreateToken(address: Address): Token {
   let token = Token.load(address.toHexString());
@@ -47,7 +53,7 @@ function transfer(
   if (value == BigInt.fromI32(0)) return;
   let token = getOrCreateToken(tokenAddress);
 
-  if (from != ZERO) {
+  if (from != ZERO()) {
     let id = `${from.toHexString()}|${token.id}`;
     let balance = Balance.load(id);
     if (balance == null) {
@@ -62,7 +68,7 @@ function transfer(
     balance.save();
   }
 
-  if (to != ZERO) {
+  if (to != ZERO()) {
     let id = `${to.toHexString()}|${token.id}`;
     let balance = Balance.load(id);
     if (balance == null) {
