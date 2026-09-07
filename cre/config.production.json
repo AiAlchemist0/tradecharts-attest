@@ -1,0 +1,10 @@
+{
+  "schedule": "0 0 * * 6",
+  "symbol": "ETH",
+  "close_url": "https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=1w&limit=1",
+  "secrets_ids": {
+    "map_side_secret_id": "MAP_SIDE",
+    "kill_secret_id": "KILL",
+    "net_secret_id": "NET"
+  }
+}

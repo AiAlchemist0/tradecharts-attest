@@ -1,0 +1,10 @@
+{
+  "schedule": "0 0 * * 6",
+  "symbol": "ETH",
+  "close_url": "http://localhost:8787/close",
+  "secrets_ids": {
+    "map_side_secret_id": "MAP_SIDE",
+    "kill_secret_id": "KILL",
+    "net_secret_id": "NET"
+  }
+}

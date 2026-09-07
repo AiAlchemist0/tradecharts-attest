@@ -4,3 +4,6 @@ node_modules/
 .env.*.local
 assets/cover.svg
 assets/cover-wide.svg
+
+# CRE local simulate
+cre/secrets.yaml
