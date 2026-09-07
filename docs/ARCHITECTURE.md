@@ -42,7 +42,8 @@ flowchart LR
 | `src/graph/compose.ts` | Join bag ⋈ maps → aligned / fighting / unmapped |
 | `src/graph/live.test.ts` | `LIVE_GRAPH=1 npm test` — the live two-subgraph join |
 | `demo/` | Paste an address → live compose rows. No keys, no desk. **Shipped.** |
-| `cre/` | Chainlink Confidential Workflow (`handlerInTee`) — in progress this week |
+| `cre/` | Close-kill CRE Confidential Workflow (`handlerInTee`): private kill policy in secrets, deterministic decision, `KillSettled` onchain write. **Shipped; live CRE run after the Chainlink session.** |
+| `ledger/` | The human gate after the TEE, before funds — Agent Stack / Key Ring plan + DQ notes. |
 
 ## Existing product (not this tree)
 
