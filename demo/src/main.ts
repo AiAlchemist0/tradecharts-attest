@@ -8,8 +8,9 @@
  */
 // Direct module imports (not the src/index barrel) — the barrel also exports
 // policy/hash.ts, which uses node:crypto and cannot run in the browser.
-import { fetchComposed } from "../../src/graph/queries";
+import { fetchComposed, type ComposeOpts } from "../../src/graph/queries";
 import type { ComposedRow } from "../../src/graph/compose";
+import { AAVE_SUBGRAPH_ID } from "../../src/graph/aave";
 
 const DEFAULT_BAG =
   "https://api.studio.thegraph.com/query/1758683/trade-charts-bag/version/latest";
@@ -17,8 +18,26 @@ const DEFAULT_MAPS =
   "https://api.studio.thegraph.com/query/1758683/trade-charts/version/latest";
 const BUILDER_WALLET = "0xfA8C53B715755762209De11923fB99BC4607954B";
 
-const bagUrl = new URLSearchParams(location.search).get("bag") ?? DEFAULT_BAG;
-const mapsUrl = new URLSearchParams(location.search).get("maps") ?? DEFAULT_MAPS;
+const params = new URLSearchParams(location.search);
+const bagUrl = params.get("bag") ?? DEFAULT_BAG;
+const mapsUrl = params.get("maps") ?? DEFAULT_MAPS;
+/** Free key from thegraph.com — only needed for the Messari Aave source. */
+const graphKey = params.get("graphkey") ?? "";
+
+type Source = "base" | "aave" | "both";
+
+function composeOpts(source: Source): ComposeOpts {
+  const opts: ComposeOpts = { maps: { endpoint: mapsUrl } };
+  if (source === "base" || source === "both") opts.standard = { endpoint: bagUrl };
+  if (source === "aave" || source === "both") {
+    opts.aave = {
+      gatewayUrl: "https://gateway.thegraph.com/api",
+      apiKey: graphKey,
+      subgraphId: AAVE_SUBGRAPH_ID,
+    };
+  }
+  return opts;
+}
 
 const STATUS_TONE: Record<ComposedRow["status"], string> = {
   aligned: "up",
@@ -46,12 +65,15 @@ function row(r: ComposedRow): string {
 
 async function run(wallet: string): Promise<void> {
   const out = document.getElementById("out")!;
-  out.innerHTML = `<p class="loading">Querying both subgraphs…</p>`;
+  const source = (document.getElementById("source") as HTMLSelectElement).value as Source;
+  if ((source === "aave" || source === "both") && !graphKey) {
+    out.innerHTML = `<p class="error">The Aave (Messari) source runs on The Graph Network and needs a free API key —
+      reload with <span class="mono">&amp;graphkey=YOUR_KEY</span> (create one at thegraph.com). The Base bag source is keyless.</p>`;
+    return;
+  }
+  out.innerHTML = `<p class="loading">Querying the subgraphs…</p>`;
   try {
-    const rows = await fetchComposed(wallet, {
-      standard: { endpoint: bagUrl },
-      maps: { endpoint: mapsUrl },
-    });
+    const rows = await fetchComposed(wallet, composeOpts(source));
     if (rows.length === 0) {
       out.innerHTML = `<p class="loading">No bag and no maps for this address in the indexed window.</p>`;
       return;
@@ -61,7 +83,7 @@ async function run(wallet: string): Promise<void> {
     out.innerHTML = `
       <p class="summary">${rows.length} rows · ${aligned} aligned · ${fighting} fighting</p>
       <table>
-        <thead><tr><th>Symbol</th><th>Bag (Base)</th><th>Perp</th><th>Map</th><th>Status</th></tr></thead>
+        <thead><tr><th>Symbol</th><th>Spot / bag</th><th>Perp / debt</th><th>Map</th><th>Status</th></tr></thead>
         <tbody>${rows.map(row).join("")}</tbody>
       </table>`;
   } catch (e) {
@@ -72,20 +94,27 @@ async function run(wallet: string): Promise<void> {
 document.getElementById("app")!.innerHTML = `
   <header>
     <h1>TradeCharts Attest — compose</h1>
-    <p>Two live Graph products, one join: a Base ERC-20 balances subgraph ⋈ confirmed wave maps.
-       Every coin on the book is <b class="up">aligned</b>, <b class="down">fighting</b>, or
-       <b class="muted">unmapped</b> against its map.</p>
+    <p>Live Graph products, one join: a Base ERC-20 balances subgraph and a Messari standardized
+       lending subgraph ⋈ confirmed wave maps. Every coin on the book is <b class="up">aligned</b>,
+       <b class="down">fighting</b>, or <b class="muted">unmapped</b> against its map.</p>
   </header>
   <form id="f">
     <input id="w" placeholder="Paste any wallet address" spellcheck="false" autocomplete="off" />
+    <select id="source" title="Bag source">
+      <option value="base" selected>Base ERC-20 bag (keyless)</option>
+      <option value="aave">Aave positions (Messari)</option>
+      <option value="both">Both</option>
+    </select>
     <button type="submit">Compose</button>
     <button type="button" id="preset">Builder wallet</button>
   </form>
   <section id="out" aria-live="polite"><p class="loading">Paste an address to join its bag with confirmed maps.</p></section>
   <footer>
     <p class="mono">bag: <a href="${bagUrl}" target="_blank" rel="noreferrer">${bagUrl.replace("https://api.studio.thegraph.com/query/", "…/")}</a></p>
+    <p class="mono">aave: <span class="mono">gateway…/subgraphs/id/${AAVE_SUBGRAPH_ID.slice(0, 12)}…</span> (Messari standardized schema)</p>
     <p class="mono">maps: <a href="${mapsUrl}" target="_blank" rel="noreferrer">${mapsUrl.replace("https://api.studio.thegraph.com/query/", "…/")}</a></p>
-    <p>Bag balances cover Transfers in the subgraph's indexed window (≈90 days). Maps are MapConfirmed events on Base Sepolia.
+    <p>Bag balances cover Transfers in the subgraph's indexed window (≈90 days); Aave positions are open LENDER (bag) and
+       BORROWER (debt) sides on Arbitrum. Maps are MapConfirmed events on Base Sepolia.
        Source: <a href="https://github.com/AiAlchemist0/tradecharts-attest" target="_blank" rel="noreferrer">tradecharts-attest</a> · live desk: <a href="https://tradecharts.app" target="_blank" rel="noreferrer">tradecharts.app</a></p>
   </footer>`;
 

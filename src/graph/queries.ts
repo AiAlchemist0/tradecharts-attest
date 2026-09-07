@@ -1,5 +1,6 @@
 import { isEthAddress } from "../safety/token";
 import { compose, type ComposedRow, type MapRow, type PerpRow } from "./compose";
+import { fetchAaveBook } from "./aave";
 import { fetchStandardBag, queryUrl, type GraphConfig } from "./standard";
 
 export type MapsConfig = GraphConfig;
@@ -45,14 +46,27 @@ export async function fetchMaps(wallet: string, cfg: MapsConfig): Promise<MapRow
   }));
 }
 
-/** Live join: standardized bag ⋈ our maps. Two Graph products, two endpoints. */
-export async function fetchComposed(
-  wallet: string,
-  opts: { standard: GraphConfig; maps: MapsConfig; perps?: PerpRow[] },
-): Promise<ComposedRow[]> {
-  const [bag, maps] = await Promise.all([
-    fetchStandardBag(wallet, opts.standard),
-    fetchMaps(wallet, opts.maps),
-  ]);
-  return compose({ bag, maps, perps: opts.perps });
+/**
+ * Live join: bag ⋈ our maps. Two Graph products, two endpoints — the bag is
+ * either our Base balances subgraph (`standard`), a Messari standardized
+ * lending subgraph (`aave`), or both merged. Perp rows (HL reads or Aave
+ * borrows) join the perp side.
+ */
+export type ComposeOpts = {
+  standard?: GraphConfig;
+  aave?: GraphConfig;
+  maps: MapsConfig;
+  perps?: PerpRow[];
+};
+
+export async function fetchComposed(wallet: string, opts: ComposeOpts): Promise<ComposedRow[]> {
+  const sources: Promise<{ bag: import("./standard").StandardBagToken[]; perps?: PerpRow[] }>[] = [];
+  if (opts.standard) sources.push(fetchStandardBag(wallet, opts.standard).then((bag) => ({ bag })));
+  if (opts.aave) sources.push(fetchAaveBook(wallet, opts.aave));
+  if (sources.length === 0) throw new Error("fetchComposed needs a bag source: standard or aave");
+
+  const [results, maps] = await Promise.all([Promise.all(sources), fetchMaps(wallet, opts.maps)]);
+  const bag = results.flatMap((r) => r.bag);
+  const extraPerps = results.flatMap((r) => r.perps ?? []);
+  return compose({ bag, maps, perps: [...(opts.perps ?? []), ...extraPerps] });
 }
