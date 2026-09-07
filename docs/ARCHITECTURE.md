@@ -13,8 +13,8 @@ ETHOnline 2026 Continuity. This repo is the **open-source join**. The live desk 
 flowchart LR
   desk[Live desk]
   wallet[SIWE wallet]
-  std[Standardized subgraph]
-  maps[Maps subgraph]
+  std[Bag subgraph - Base ERC-20]
+  maps[Maps subgraph - MapConfirmed]
   compose[compose.ts]
   cre[CRE TEE]
   chain[Onchain write]
@@ -36,11 +36,13 @@ flowchart LR
 |------|-----|
 | `src/validator/` | Elliott gate (same rules as production) |
 | `src/policy/` | `conflict` · `hash` · `kill` |
-| `subgraph/` | Maps + conflict — The Graph Studio |
-| `src/graph/standard.ts` | Standardized token/balance subgraph |
+| `subgraph/` | Maps subgraph — `MapConfirmed` events (Base Sepolia). **Live on Studio**, seeded with confirmed maps. |
+| `subgraphs/bag/` | Bag subgraph — Base ERC-20 balances (allowlisted tokens), Transfer events in a ~90-day window. **Live on Studio.** |
+| `src/graph/standard.ts` | Bag client — Studio endpoint (keyless) or Network gateway mode |
 | `src/graph/compose.ts` | Join bag ⋈ maps → aligned / fighting / unmapped |
-| `cre/` | Chainlink Confidential Workflow (`handlerInTee`) |
-| `demo/` | Wallet in → live Graph rows. No desk required. |
+| `src/graph/live.test.ts` | `LIVE_GRAPH=1 npm test` — the live two-subgraph join |
+| `demo/` | Paste an address → live compose rows. No keys, no desk. **Shipped.** |
+| `cre/` | Chainlink Confidential Workflow (`handlerInTee`) — in progress this week |
 
 ## Existing product (not this tree)
 
