@@ -1,5 +1,5 @@
-"""Token metadata (attacker-controlled fields never enter compose rows unchecked — see src/safety/token.ts)."""
-type Token @entity(immutable: true) {
+"""Token metadata (attacker-controlled fields never enter compose rows unchecked — see src/safety/token.ts). Mutable so the handler can load() it — graph-node refuses store lookups on immutable entities."""
+type Token @entity(immutable: false) {
   id: ID!
   symbol: String!
   name: String
