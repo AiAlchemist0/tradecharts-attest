@@ -4,7 +4,7 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --studio trade-charts-bag --version-label v0.1.0"
+    "deploy": "graph deploy trade-charts-bag --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/api/v0 -l v0.1.0"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.98.1"
