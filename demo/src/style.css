@@ -1,0 +1,148 @@
+:root {
+  --bg: #080809;
+  --panel: #101013;
+  --line: rgba(255, 255, 255, 0.08);
+  --fg: #e8e8ea;
+  --muted: #8a8f98;
+  --subtle: #6b7078;
+  --up: #3dbe8c;
+  --down: #d45b4a;
+  --warn: #e0a458;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+h1 {
+  font-family: Newsreader, Georgia, serif;
+  font-weight: 500;
+  font-size: 28px;
+  margin: 0 0 4px;
+}
+
+header p {
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+.up { color: var(--up); }
+.down { color: var(--down); }
+.muted { color: var(--subtle); }
+.warn { color: var(--warn); }
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--fg);
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+input:focus {
+  outline: 1px solid var(--up);
+}
+
+button {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 14px;
+}
+
+button:hover {
+  border-color: var(--up);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  color: var(--subtle);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+}
+
+.mono {
+  font-family: "IBM Plex Mono", Consolas, monospace;
+}
+
+.num {
+  text-align: right;
+}
+
+th.num {
+  text-align: right;
+}
+
+.status {
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 12px;
+}
+
+.loading {
+  color: var(--subtle);
+}
+
+.error {
+  color: var(--down);
+}
+
+.summary {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 32px;
+  padding-top: 16px;
+}
+
+footer p {
+  color: var(--subtle);
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+a {
+  color: var(--muted);
+}
