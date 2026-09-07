@@ -1,12 +1,12 @@
 import { isEthAddress } from "../safety/token";
 import { compose, type ComposedRow, type MapRow, type PerpRow } from "./compose";
-import { fetchStandardBag, type GraphConfig } from "./standard";
+import { fetchStandardBag, queryUrl, type GraphConfig } from "./standard";
 
 export type MapsConfig = GraphConfig;
 
 const MAPS_QUERY = /* GraphQL */ `
   query Maps($wallet: Bytes!) {
-    maps(where: { wallet: $wallet }, first: 100) {
+    maps(where: { wallet: $wallet }, first: 100, orderBy: createdAt, orderDirection: desc) {
       symbol
       side
       longKill
@@ -23,8 +23,7 @@ function biasFromSide(side: string): MapRow["bias"] {
 
 export async function fetchMaps(wallet: string, cfg: MapsConfig): Promise<MapRow[]> {
   if (!isEthAddress(wallet)) throw new Error("bad wallet");
-  const url = `${cfg.gatewayUrl.replace(/\/$/, "")}/${cfg.apiKey}/subgraphs/id/${cfg.subgraphId}`;
-  const res = await fetch(url, {
+  const res = await fetch(queryUrl(cfg), {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({
@@ -46,7 +45,7 @@ export async function fetchMaps(wallet: string, cfg: MapsConfig): Promise<MapRow
   }));
 }
 
-/** Live join: standardized bag ⋈ our maps. Requires two subgraph ids. */
+/** Live join: standardized bag ⋈ our maps. Two Graph products, two endpoints. */
 export async function fetchComposed(
   wallet: string,
   opts: { standard: GraphConfig; maps: MapsConfig; perps?: PerpRow[] },

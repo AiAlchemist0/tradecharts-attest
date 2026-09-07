@@ -26,7 +26,15 @@ export type ComposedRow = {
 };
 
 function norm(sym: string): string {
-  return sym.replace(/[-_/]/g, "").toUpperCase().replace(/USDT$|USD$/, "") || sym.toUpperCase();
+  return (
+    sym
+      .replace(/[-_/]/g, "")
+      .toUpperCase()
+      // Wrapped canonical coins join their map symbol (Base bag holds WETH;
+      // maps are drawn on ETH).
+      .replace(/^W(ETH|BTC)$/, "$1")
+      .replace(/USDT$|USD$/, "") || sym.toUpperCase()
+  );
 }
 
 /**
