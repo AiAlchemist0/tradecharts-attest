@@ -1,7 +1,7 @@
 specVersion: 1.2.0
 schema:
   file: ./schema.graphql
-description: TradeCharts maps + conflict. ETHOnline 2026 Continuity. Bootstrap indexes Base Sepolia EAS until MapConfirmed is deployed.
+description: TradeCharts maps subgraph. Confirmed maps are EAS attestations on Base Sepolia; compose (bag ⋈ maps) runs client-side in src/graph.
 dataSources:
   - kind: ethereum
     name: EAS
@@ -16,11 +16,12 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Map
-        - Conflict
       abis:
         - name: EAS
           file: ./abis/EAS.json
       eventHandlers:
         - event: Attested(indexed address,indexed address,bytes32,indexed bytes32)
           handler: handleAttested
+        - event: Revoked(indexed bytes32)
+          handler: handleRevoked
       file: ./src/mapping.ts

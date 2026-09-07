@@ -1,6 +1,14 @@
 {
   "name": "tradecharts-maps-subgraph",
   "private": true,
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --studio trade-charts --version-label v0.2.0"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.98.1"
+  },
   "dependencies": {
     "@graphprotocol/graph-ts": "0.37.0"
   }
