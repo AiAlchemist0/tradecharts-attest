@@ -20,9 +20,19 @@ Hostile ERC-20 names in the standardized bag are dropped before compose (`src/sa
 
 ## Event wiring
 
-1. **The Graph** — two live products: a *standardized* token/balance subgraph (bag) **and** our maps subgraph. `compose.ts` joins them. Not one homemade subgraph.
+1. **The Graph** — two products, joined in `src/graph/compose.ts`: an ERC-20 **balances subgraph on Base** (`subgraphs/bag/`, allowlisted tokens, balances from Transfer events in the indexed window) ⋈ our **maps subgraph on Base Sepolia** (`subgraph/`, confirmed maps as EAS attestations). The join lives in `compose.ts`; run it in `demo/` with any address. A Messari **standardized-schema** join (wallet lending positions) is the next leg.
 2. **Chainlink** — CRE Confidential Workflow (`handlerInTee`) is flatten; same run writes onchain.
 3. **Ledger** — device approval before flatten.
+
+## Event vs Alpha
+
+**Pre-existing (not hackathon work):** the commercial desk at https://tradecharts.app — Vite/React UI, Binance tape, SIWE login, wallet/Hyperliquid reads, the deterministic Elliott validator (`src/validator/`, copied here with tests), and Confirm as a private save.
+
+**This event:** both subgraphs, the compose join, the EAS-attested Map records, `demo/`, and the live Studio consume. Chainlink CRE and the Ledger gate are in progress this week. Nothing in this repo existed before ETHOnline 2026.
+
+## Run
+
+See [README](../README.md#run) — offline tests, the `LIVE_GRAPH=1` live compose check, the `demo/` page, and subgraph deploy scripts.
 
 ## Desk (this event)
 

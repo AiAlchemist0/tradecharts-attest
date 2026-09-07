@@ -73,7 +73,7 @@ AI is a job on this desk, not a chatbot bolted on. **Propose** drafts a weekly m
 | Coin-volume tape, 24/7 week | often USD vol | yes | yes | — | Binance coins |
 | Your bag is the watchlist | — | exchange acct | perps | yes | SIWE bag |
 | AI drafts the weekly wave map | Copilot / Pine | — | — | — | Propose |
-| AI teaches why the map looks that way | help docs | academy | — | — | Ask AI |
+| AI explains why the map looks that way | help docs | academy | — | — | Ask AI |
 | Refuse a count that breaks the rules | scripts can lie | — | — | — | rules check |
 | You Confirm — not a signal | alert / script | — | — | — | you Confirm |
 | Bag ⋈ map (fighting / unmapped) | — | — | — | — | compose |
@@ -162,10 +162,24 @@ Visitor docs: https://tradecharts.app/docs
 
 ```bash
 npm install
-npm test
+npm test                  # 65 tests, offline
+LIVE_GRAPH=1 npm test     # + the live compose check against both Studio subgraphs
 ```
 
-Copy `.env.example` to `.env` for a Graph gateway key. Never commit `.env`.
+Try the join in a browser — paste any address, no keys:
+
+```bash
+cd demo && npm install && npm run dev
+```
+
+Deploy the subgraphs yourself (needs a Subgraph Studio deploy key, never committed):
+
+```bash
+cd subgraphs/bag && npm install && npm run deploy   # trade-charts-bag — Base ERC-20 balances
+cd subgraph      && npm install && npm run deploy   # trade-charts — maps from EAS attestations (Base Sepolia)
+```
+
+Copy `.env.example` to `.env` to override endpoints or use a Graph Network gateway key. Never commit `.env`.
 
 ## Security
 
