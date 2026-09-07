@@ -176,7 +176,7 @@ Deploy the subgraphs yourself (needs a Subgraph Studio deploy key, never committ
 
 ```bash
 cd subgraphs/bag && npm install && npm run deploy   # trade-charts-bag — Base ERC-20 balances
-cd subgraph      && npm install && npm run deploy   # trade-charts — maps from EAS attestations (Base Sepolia)
+cd subgraph      && npm install && npm run deploy   # trade-charts — maps from MapConfirmed events (Base Sepolia)
 ```
 
 Copy `.env.example` to `.env` to override endpoints or use a Graph Network gateway key. Never commit `.env`.

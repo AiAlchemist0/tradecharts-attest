@@ -85,7 +85,7 @@ document.getElementById("app")!.innerHTML = `
   <footer>
     <p class="mono">bag: <a href="${bagUrl}" target="_blank" rel="noreferrer">${bagUrl.replace("https://api.studio.thegraph.com/query/", "…/")}</a></p>
     <p class="mono">maps: <a href="${mapsUrl}" target="_blank" rel="noreferrer">${mapsUrl.replace("https://api.studio.thegraph.com/query/", "…/")}</a></p>
-    <p>Bag balances cover Transfers in the subgraph's indexed window (≈90 days). Maps are EAS attestations on Base Sepolia.
+    <p>Bag balances cover Transfers in the subgraph's indexed window (≈90 days). Maps are MapConfirmed events on Base Sepolia.
        Source: <a href="https://github.com/AiAlchemist0/tradecharts-attest" target="_blank" rel="noreferrer">tradecharts-attest</a> · live desk: <a href="https://tradecharts.app" target="_blank" rel="noreferrer">tradecharts.app</a></p>
   </footer>`;
 

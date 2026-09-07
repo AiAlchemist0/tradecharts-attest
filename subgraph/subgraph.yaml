@@ -1,15 +1,15 @@
 specVersion: 1.2.0
 schema:
   file: ./schema.graphql
-description: TradeCharts maps subgraph. Confirmed maps are EAS attestations on Base Sepolia; compose (bag ⋈ maps) runs client-side in src/graph.
+description: TradeCharts maps subgraph. Confirmed maps are MapConfirmed events on Base Sepolia; compose (bag ⋈ maps) runs client-side in src/graph.
 dataSources:
   - kind: ethereum
-    name: EAS
+    name: MapConfirmed
     network: base-sepolia
     source:
-      address: "0x4200000000000000000000000000000000000021"
-      abi: EAS
-      startBlock: 46392400
+      address: "0x17D8ac32E08969C7C0CC3f9e2B39137d208512bE"
+      abi: MapConfirmed
+      startBlock: 46519840
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
@@ -17,11 +17,9 @@ dataSources:
       entities:
         - Map
       abis:
-        - name: EAS
-          file: ./abis/EAS.json
+        - name: MapConfirmed
+          file: ./abis/MapConfirmed.json
       eventHandlers:
-        - event: Attested(indexed address,indexed address,bytes32,indexed bytes32)
-          handler: handleAttested
-        - event: Revoked(indexed bytes32)
-          handler: handleRevoked
+        - event: Confirmed(indexed address,string,string,string,string,string,uint256,bytes32,bool)
+          handler: handleConfirmed
       file: ./src/mapping.ts

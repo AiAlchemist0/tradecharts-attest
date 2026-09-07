@@ -20,7 +20,7 @@ Hostile ERC-20 names in the standardized bag are dropped before compose (`src/sa
 
 ## Event wiring
 
-1. **The Graph** — two products, joined in `src/graph/compose.ts`: an ERC-20 **balances subgraph on Base** (`subgraphs/bag/`, allowlisted tokens, balances from Transfer events in the indexed window) ⋈ our **maps subgraph on Base Sepolia** (`subgraph/`, confirmed maps as EAS attestations). The join lives in `compose.ts`; run it in `demo/` with any address. A Messari **standardized-schema** join (wallet lending positions) is the next leg.
+1. **The Graph** — two products, joined in `src/graph/compose.ts`: an ERC-20 **balances subgraph on Base** (`subgraphs/bag/`, allowlisted tokens, balances from Transfer events in the indexed window) ⋈ our **maps subgraph on Base Sepolia** (`subgraph/`, confirmed maps as `MapConfirmed` events). The join lives in `compose.ts`; run it in `demo/` with any address. A Messari **standardized-schema** join (wallet lending positions) is the next leg.
 2. **Chainlink** — CRE Confidential Workflow (`handlerInTee`) is flatten; same run writes onchain.
 3. **Ledger** — device approval before flatten.
 
