@@ -1,0 +1,38 @@
+Initializing...
+Loading settings...
+Checking RPC connectivity...
+Compiling workflow...
+✓ Workflow compiled
+✓ Simulation limits enabled
+  HTTP: req=120kb resp=250kb timeout=10s | ConfHTTP: req=125kb resp=500kb timeout=1m30s | Consensus obs=25kb | ChainWrite evm_report=50kb evm_gas=10000000 solana_report=265b solana_cu=300000 | WASM binary=100mb compressed=20mb
+  Binary hash: 6f34b6252adaa4f1a2a828997bf2e0b3a295638ce8fdd3b2bc3e0488651de217
+  Config hash: fd16e7bdab2b52702f174ac6e54660e799b692c043340966e985477a76e15922
+! Secret "NET" uses itself as the env var name — this is fragile and may cause confusion. Consider using a distinct env var name (e.g. "CRE_NET").
+! Secret "MAP_SIDE" uses itself as the env var name — this is fragile and may cause confusion. Consider using a distinct env var name (e.g. "CRE_MAP_SIDE").
+! Secret "KILL" uses itself as the env var name — this is fragile and may cause confusion. Consider using a distinct env var name (e.g. "CRE_KILL").
+2026-09-07T15:11:13Z [SIMULATION] Simulator Initialized
+
+2026-09-07T15:11:13Z [SIMULATION] Running trigger trigger=cron-trigger@1.0.0
+╭────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Handler requested TEE Execution                                                                    │
+│ The simulator is not a real TEE, and is meant to debug.                                            │
+│ Do not use it for sensitive information.                                                           │
+│ During real execution, user logs for this trigger will not be visible, and will not leave the TEE. │
+│ They are presented in the simulator for debugging only.                                            │
+│                                                                                                    │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+2026-09-07T15:11:13Z [USER LOG] close-kill-secrets-ok
+2026-09-07T15:11:13Z [USER LOG] close-kill-decision flatten=true close=2400 kill=2500
+
+✓ Workflow Simulation Result:
+"{\"flatten\":true,\"symbol\":\"ETH\",\"close\":2400,\"kill\":2500,\"side\":\"long\",\"net\":4,\"reasonHash\":\"d45306c8\"}"
+
+2026-09-07T15:11:13Z [SIMULATION] Execution finished signal received
+2026-09-07T15:11:13Z [SIMULATION] Skipping WorkflowEngineV2
+
+╭──────────────────────────────────────────────────────╮
+│ Simulation complete! Ready to deploy your workflow?  │
+│                                                      │
+│ Run cre account access to request deployment access. │
+╰──────────────────────────────────────────────────────╯

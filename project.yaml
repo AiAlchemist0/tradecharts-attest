@@ -1,0 +1,14 @@
+# CRE PROJECT SETTINGS FILE
+# The close-kill workflow decides in the TEE and does not read/write a chain
+# from inside the CRE runtime (the KillSettled write runs from the settle key);
+# RPCs are declared so extending the runtime with an onchain write needs no
+# extra project setup.
+staging-settings:
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com
+
+production-settings:
+  rpcs:
+    - chain-name: ethereum-testnet-sepolia
+      url: https://ethereum-sepolia-rpc.publicnode.com

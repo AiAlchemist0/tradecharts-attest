@@ -47,8 +47,10 @@ export type CloseKillDecision = {
 
 const decodeBody = (raw: Uint8Array): string => new TextDecoder().decode(raw);
 
-/** Pure decision — exported for tests; the TEE handler is a thin wrapper. */
-export function decide(print: KillPrint, symbol: string): CloseKillDecision {
+/** Pure decision — exported for tests; the TEE handler is a thin wrapper.
+ *  (Arrow consts, not `export function` — Javy rejects exported function
+ *  declarations with parameters when compiling to WASM.) */
+export const decide = (print: KillPrint, symbol: string): CloseKillDecision => {
   const action = killAction(print);
   const reason = `close ${print.close} ${action === "flatten" ? "printed through" : "did not print through"} the ${print.side} kill ${print.kill} (net ${print.net})`;
   return {
@@ -60,17 +62,17 @@ export function decide(print: KillPrint, symbol: string): CloseKillDecision {
     net: print.net,
     reasonHash: hashReason(reason),
   };
-}
+};
 
 /** Deterministic FNV-1a — stable across runs, enough for the onchain record. */
-export function hashReason(reason: string): string {
+export const hashReason = (reason: string): string => {
   let h = 0x811c9dc5;
   for (let i = 0; i < reason.length; i++) {
     h ^= reason.charCodeAt(i);
     h = Math.imul(h, 0x01000193) >>> 0;
   }
   return h.toString(16).padStart(8, "0");
-}
+};
 
 function parseCloseFromKlines(body: unknown): number {
   // Binance klines: [[openTime, open, high, low, CLOSE, ...]]

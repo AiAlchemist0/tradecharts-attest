@@ -20,15 +20,22 @@ Continuity upgrade is a **state change**, not a price on a chart.
 cd cre && bun install && bun test
 ```
 
-## Simulate with the CRE CLI
+## Simulate with the CRE CLI (verified — log in `simulate-log.txt`)
 
 ```bash
-cp secrets.example.yaml secrets.yaml
-bun run mock:server &          # serves the decision-bar close
-cre workflow simulate ./cre --project-root . --target=staging-settings --env ./.env
+cp secrets.example.yaml secrets.yaml      # maps secret ids → .env vars
+cp .env.example .env                      # at repo root: CRE_ETH_PRIVATE_KEY + MAP_SIDE/KILL/NET + MOCK_*
+bun install && bun run mock:server &      # serves the decision-bar close
+cre workflow simulate ./cre --project-root . --target=staging-settings \
+  --env ./.env --non-interactive --trigger-index 0
 ```
 
-(Install the CLI: `curl -sSL https://app.chain.link/cre/install.sh | bash`.)
+(Install the CLI: `curl -sSL https://app.chain.link/cre/install.sh | bash`, then
+`cre login`. Requires the root `project.yaml`.) The 2026-09-07 run decided
+`flatten=true` with `reasonHash d45306c8` — the exact hash settled onchain
+below. Mapping gotchas learned the hard way: `secrets.yaml` maps secret IDs to
+env var names (`secretsNames:`); Javy rejects `export function` declarations
+with parameters — export handlers as arrow consts.
 
 ## Write the decision onchain
 
