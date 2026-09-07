@@ -5,11 +5,14 @@ import { Bytes } from "@graphprotocol/graph-ts";
  * (string symbol, string timeframe, string side, string longKill, string shortKill,
  *  uint256 barTime, bytes32 mapHash, bool positioned)
  *
- * UID = keccak256(abi.encode(schema, resolver=0x0, revocable=true)) — deterministic,
- * so it is known before registration. Attestations under any other schema are ignored.
+ * UID read from the Registered event of the registration tx
+ * 0x0b097f557985736d871e2f254da2088c406b92d6f010ad4b9af01edd3c745c75 —
+ * this EAS deployment's UID formula differs from both keccak(abi.encode)
+ * and keccak(abi.encodePacked), so the onchain value is the source of truth.
+ * Attestations under any other schema are ignored.
  */
 export const MAP_SCHEMA_UID = Bytes.fromHexString(
-  "0x803c0defbc7f0a3f92ba096365fba94da3c8fc046e6212a6a62ac015b0c5b74b",
+  "0xd33f63c5fe4b01cd52272ebde987a52e291b00e80aa9b6ff4ecfa433f8ec99d3",
 );
 
 /** ABI tuple type of the attestation data payload. */
