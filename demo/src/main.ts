@@ -113,7 +113,7 @@ document.getElementById("app")!.innerHTML = `
     <p class="mono">bag: <a href="${bagUrl}" target="_blank" rel="noreferrer">${bagUrl.replace("https://api.studio.thegraph.com/query/", "…/")}</a></p>
     <p class="mono">aave: <span class="mono">gateway…/subgraphs/id/${AAVE_SUBGRAPH_ID.slice(0, 12)}…</span> (Messari standardized schema)</p>
     <p class="mono">maps: <a href="${mapsUrl}" target="_blank" rel="noreferrer">${mapsUrl.replace("https://api.studio.thegraph.com/query/", "…/")}</a></p>
-    <p>Bag balances cover Transfers in the subgraph's indexed window (≈90 days); Aave positions are open LENDER (bag) and
+    <p>Bag balances cover Transfers in the subgraph's indexed window (≈2 weeks, syncing to head); Aave positions are open LENDER (bag) and
        BORROWER (debt) sides on Arbitrum. Maps are MapConfirmed events on Base Sepolia.
        Source: <a href="https://github.com/AiAlchemist0/tradecharts-attest" target="_blank" rel="noreferrer">tradecharts-attest</a> · live desk: <a href="https://tradecharts.app" target="_blank" rel="noreferrer">tradecharts.app</a></p>
   </footer>`;
