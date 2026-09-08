@@ -33,6 +33,35 @@ for (const k of ["flatten", "symbol", "close", "kill", "side", "net", "reasonHas
   if (!(k in decision)) throw new Error(`decision JSON missing ${k} — paste the workflow output`);
 }
 
+// World / AgentBook gate: the agent may settle only when it resolves to a
+// verified human. Override with --allow-unregistered for local tests.
+const allowUnregistered = process.argv.includes("--allow-unregistered");
+const AGENT_BOOK = "0xA23aB2712eA7BBa896930544C7d6636a96b944dA";
+const lookup = await fetch("https://worldchain-mainnet.g.alchemy.com/public", {
+  method: "POST",
+  headers: { "content-type": "application/json" },
+  body: JSON.stringify({
+    jsonrpc: "2.0",
+    id: 1,
+    method: "eth_call",
+    params: [
+      {
+        to: AGENT_BOOK,
+        data: "0x451a02f4" + "0".repeat(24) + process.env.AGENT_ADDRESS?.replace(/^0x/, "").toLowerCase(),
+      },
+      "latest",
+    ],
+  }),
+}).then((r) => r.json());
+const agentAddress = process.env.AGENT_ADDRESS ?? "";
+const humanBacked = lookup.result && lookup.result !== "0x" + "0".repeat(64);
+if (!humanBacked && !allowUnregistered) {
+  throw new Error(
+    `agent ${agentAddress || "(AGENT_ADDRESS unset)"} is not human-backed in AgentBook — register it first (world/README.md)`,
+  );
+}
+console.log(humanBacked ? `agent human-backed (id ${lookup.result}) — settle may proceed` : "UNREGISTERED settle allowed (--allow-unregistered)");
+
 const provider = new JsonRpcProvider(RPC);
 const wallet = new Wallet(loadKey(), provider);
 console.log(`settler ${wallet.address} (${formatEther(await provider.getBalance(wallet.address))} ETH)`);

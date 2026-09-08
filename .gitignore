@@ -7,3 +7,6 @@ assets/cover-wide.svg
 
 # CRE local simulate
 cre/secrets.yaml
+.env
+cre/.cre_build_tmp.js
+cre/bun.lock
