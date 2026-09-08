@@ -142,6 +142,8 @@ Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wycko
   <img src="assets/screenshots/06-attest.png" width="100%" alt="Attested Confirm" />
 </p>
 
+The Ledger gate is also built and verified — real firmware on the partner-sanctioned [Speculos](https://developers.ledger.com/docs/device-app/references/framework) emulator (`ledger/`) — as development work beyond the submitted partner set.
+
 ## Methodology
 
 <p align="center">
