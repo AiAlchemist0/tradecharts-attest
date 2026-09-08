@@ -19,7 +19,7 @@
   <rect x="716" y="188" width="160" height="56" rx="8" fill="#111114" stroke="#2a2a2e"/>
   <text x="796" y="222" text-anchor="middle" font-family="ui-sans-serif, Segoe UI, sans-serif" font-size="13" fill="#ecece8">CRE TEE</text>
   <rect x="900" y="188" width="164" height="56" rx="8" fill="#111114" stroke="#2a2a2e"/>
-  <text x="982" y="222" text-anchor="middle" font-family="ui-sans-serif, Segoe UI, sans-serif" font-size="13" fill="#ecece8">Ledger</text>
+  <text x="982" y="222" text-anchor="middle" font-family="ui-sans-serif, Segoe UI, sans-serif" font-size="13" fill="#ecece8">World</text>
   <line x1="236" y1="216" x2="256" y2="216" stroke="#5c5c58"/>
   <line x1="456" y1="216" x2="476" y2="216" stroke="#5c5c58"/>
   <line x1="676" y1="216" x2="716" y2="216" stroke="#5c5c58"/>

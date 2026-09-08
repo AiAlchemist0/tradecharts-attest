@@ -66,7 +66,7 @@ See / Stand behind / Stop is how we close those four. Phishing ERC-20s (visit / 
 
 The adjacent products each own one pane. TradingView owns the chart (Copilot / Pine; alerts can wait for bar close; they still do not flatten *your* perp). Binance and Hyperliquid own execution and **mark/wick** stops. DeBank / Zerion own the bag with no map. Nobody answers *is this book fighting its own map?*
 
-AI is a job on this desk, not a chatbot bolted on. **Propose** drafts a weekly map. A rules check can refuse it. **You Confirm.** That Confirm can arm an **opt-in kill switch**: on a weekly *close* through the kill, matching Hyperliquid risk may flatten. It cannot add size, open, or rotate. Ledger confirms before funds. It is not unsupervised “AI trading,” and it is not a promise to save every position.
+AI is a job on this desk, not a chatbot bolted on. **Propose** drafts a weekly map. A rules check can refuse it. **You Confirm.** That Confirm can arm an **opt-in kill switch**: on a weekly *close* through the kill, matching Hyperliquid risk may flatten. It cannot add size, open, or rotate. A World-verified human backs the agent before funds (AgentBook). It is not unsupervised “AI trading,” and it is not a promise to save every position.
 
 | Job | TradingView | Binance | Hyperliquid | DeBank | TradeCharts |
 |---|---|---|---|---|---|
@@ -96,7 +96,7 @@ We do not join TradingView or Binance. We teach. Compose joins the bag to the ma
 ## Architecture
 
 <p align="center">
-  <img src="assets/architecture.svg" width="100%" alt="TradeCharts Attest — desk consumes compose; Graph, CRE, Ledger" />
+  <img src="assets/architecture.svg" width="100%" alt="TradeCharts Attest — desk consumes compose; Graph, CRE, World" />
 </p>
 
 How the join works, what lives in this repo, and how the live desk consumes it without this tree including the commercial app: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -127,11 +127,11 @@ Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wycko
 | --- | --- | --- |
 | **See** | `src/policy/conflict.ts` | **The Graph** — subgraph of maps + conflict. Live queries, not mocked. |
 | **Stand behind** | `src/policy/hash.ts` | **Chainlink** Data Streams / CRE — weekly close that invalidates. |
-| **Stop** | `src/policy/kill.ts` | **Ledger** — approve before flatten. Flatten only. |
+| **Stop** | `src/policy/kill.ts` | **World** — human-backed agent only. Flatten only. |
 | **Validator** | `src/validator/` | Same gate as production. Copied, tested. |
 
 <p align="center">
-  <img src="assets/schematics/see-stand-stop.svg" width="100%" alt="See, Stand behind, Stop — The Graph, Chainlink, Ledger" />
+  <img src="assets/schematics/see-stand-stop.svg" width="100%" alt="See, Stand behind, Stop — The Graph, Chainlink, World" />
 </p>
 
 <p align="center">

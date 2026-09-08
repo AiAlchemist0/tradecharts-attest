@@ -18,7 +18,7 @@ flowchart LR
   compose[compose.ts]
   cre[CRE TEE]
   chain[Onchain write]
-  ledger[Ledger confirm]
+  world[World human gate]
 
   desk --> wallet
   wallet --> std
@@ -27,7 +27,7 @@ flowchart LR
   maps --> compose
   compose --> cre
   cre --> chain
-  cre --> ledger
+  cre --> world
 ```
 
 ## This repo
@@ -53,7 +53,7 @@ Candles, SIWE, read-only book, Propose → validator → Confirm. Confirm is sti
 
 - **The Graph** — two live products joined; the decision uses that row.
 - **Chainlink** — flatten is the CRE TEE; the same run writes onchain.
-- **Ledger** — device confirm after the TEE, before funds.
+- **World** — the agent must resolve to a verified human in AgentBook after the TEE, before funds.
 
 Kill is a **close**, not a wick. Not a signal.
 

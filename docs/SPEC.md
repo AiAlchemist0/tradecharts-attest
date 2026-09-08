@@ -6,7 +6,7 @@ ETHOnline 2026 Continuity. Ships onto https://tradecharts.app as crypto Beta.
 
 **Segment:** wallet-native traders with a thesis *and* a book. TradingView / Binance / Hyperliquid / DeBank each own one pane. The join is the product. Comparison: [README](../README.md#where-this-sits).
 
-Partners: **The Graph**, **Chainlink**, **Ledger** (Continuity prizes).
+Partners: **The Graph**, **Chainlink**, **World** (Continuity prizes).
 
 ## Claim
 
@@ -22,13 +22,13 @@ Hostile ERC-20 names in the standardized bag are dropped before compose (`src/sa
 
 1. **The Graph** — live products, joined in `src/graph/compose.ts`: our **Base ERC-20 balances subgraph** (`subgraphs/bag/`) and a **Messari standardized-schema lending subgraph** (Aave V3, Arbitrum — `src/graph/aave.ts`, LENDER → bag / BORROWER → debt) ⋈ our **maps subgraph** (`subgraph/`, `MapConfirmed` events, Base Sepolia). `src/graph/prompt.ts` formats rows into the desk Ask AI's prompt. Run it in `demo/` with any address.
 2. **Chainlink** — CRE Confidential Workflow (`cre/`, `handlerInTee`) decides flatten from the private kill policy; the decision is written onchain (`KillSettled`).
-3. **Ledger** — device approval after the TEE, before funds (`ledger/`).
+3. **World** — the settlement agent must be human-backed in AgentBook (World ID proof) before funds (`world/`). A Ledger hardware gate stays built in `ledger/` as unticked development work.
 
 ## Event vs Alpha
 
 **Pre-existing (not hackathon work):** the commercial desk at https://tradecharts.app — Vite/React UI, Binance tape, SIWE login, wallet/Hyperliquid reads, the deterministic Elliott validator (`src/validator/`, copied here with tests), and Confirm as a private save.
 
-**This event:** both subgraphs, the compose join, the MapConfirmed onchain records, `demo/`, and the live Studio consume. Chainlink CRE and the Ledger gate are in progress this week. Nothing in this repo existed before ETHOnline 2026.
+**This event:** both subgraphs, the compose join, the MapConfirmed onchain records, `demo/`, and the live Studio consume. Chainlink CRE is simulated with the onchain decision record; the World registration completes with Sandbox access. Nothing in this repo existed before ETHOnline 2026.
 
 ## Run
 
@@ -36,4 +36,4 @@ See [README](../README.md#run) — offline tests, the `LIVE_GRAPH=1` live compos
 
 ## Desk (this event)
 
-Watchlist is the wallet. Liq and kill on one pane. Propose → validator → Confirm → Graph row → Chainlink close → Ledger prompt → flatten. Solo book on the live site. Other tools can query the same record later.
+Watchlist is the wallet. Liq and kill on one pane. Propose → validator → Confirm → Graph row → Chainlink close → human-backed agent (World) → flatten. Solo book on the live site. Other tools can query the same record later.
