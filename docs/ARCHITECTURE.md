@@ -9,6 +9,7 @@ ETHOnline 2026 Continuity. This repo is the **open-source join**. The live desk 
 ![See / Stand behind / Stop](../assets/schematics/see-stand-stop.svg)
 ![Bag ⋈ map](../assets/schematics/compose.svg)
 ![You ask · wallet · Graph · Ask AI](../assets/schematics/graph-ask.svg)
+![Base events, two Studio subgraphs, two HTTP queries, then conflictOf](../assets/schematics/graph-tech.svg)
 
 Partner Graph setup (Ask loop, two products, honesty): [GRAPH.md](GRAPH.md).
 
@@ -40,10 +41,10 @@ flowchart LR
 | `src/validator/` | Elliott gate (same rules as production) |
 | `src/policy/` | `conflict` · `hash` · `kill` |
 | `subgraph/` | Maps subgraph — `MapConfirmed` on Base `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C`. Live Studio v0.4.0. |
-| `subgraph/contracts/` | `MapConfirmed.sol` — same ABI as the Sepolia seed contract. |
-| `subgraphs/bag/` | Bag subgraph — Base ERC-20 balances (allowlisted tokens), Transfer events in a ~90-day window. **Live on Studio.** |
+| `subgraph/contracts/` | `MapConfirmed.sol` — live on **Base** `0x78D7F79e…`. Same ABI as the earlier Sepolia seed (fallback only). |
+| `subgraphs/bag/` | Bag subgraph — Base ERC-20 balances (allowlisted tokens), Transfer events in a ≈2-week window at head. **Live on Studio.** |
 | `src/graph/standard.ts` | Bag client — Studio endpoint (keyless) or Network gateway mode |
-| `src/graph/compose.ts` | Join bag ⋈ maps → aligned / fighting / unmapped |
+| `src/graph/compose.ts` | Join bag ⋈ maps → aligned / fighting / unmapped / insolvent |
 | `src/graph/prompt.ts` | Ask / MCP cite payload (`composeAskPayload`) |
 | `src/graph/live.test.ts` | `LIVE_GRAPH=1 npm test` — the live two-subgraph join |
 | `src/graph/wallet.ts` | `compose_wallet` — same Ask payload, keyless `base` path |
@@ -66,4 +67,6 @@ Kill is a **close**, not a wick. Not a signal.
 
 ## Security
 
-The join is the attack surface. Bag metadata is hostile; flatten cannot add size; maps come from Confirm. [docs/SECURITY.md](SECURITY.md).
+The join is the attack surface. Bag metadata is hostile; flatten cannot add size; maps come from `MapConfirmed` events. [docs/SECURITY.md](SECURITY.md).
+
+Desk Ask is **maps-live** (RPC coins + Hyperliquid ⋈ Studio maps). `demo/` and `compose_wallet` are **bag-live** (Studio bag ⋈ the same maps). The mermaid above is the Graph products; the desk board does not query the bag subgraph.

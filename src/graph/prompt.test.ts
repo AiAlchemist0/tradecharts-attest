@@ -78,6 +78,35 @@ describe("citeComposeRow / composeAskPayload", () => {
     expect(payload.text).not.toMatch(/ETH fighting/);
   });
 
+  it("seed story cites match the strip words (ETH aligned, BTC/VIRTUAL fighting)", () => {
+    const rows = compose({
+      bag: [
+        { symbol: "ETH", amount: 0.003, contract: null },
+        { symbol: "BTC", amount: 0.01, contract: null },
+        { symbol: "VIRTUAL", amount: 100, contract: null },
+      ],
+      maps: [
+        { symbol: "ETH", bias: "long", longKill: null, shortKill: null },
+        { symbol: "BTC", bias: "short", longKill: null, shortKill: null },
+        { symbol: "VIRTUAL", bias: "short", longKill: null, shortKill: null },
+      ],
+    });
+    const payload = composeAskPayload(rows, { wallet: "0xabc", block: 51_160_101 });
+    expect(citeComposeRow(rows.find((r) => r.symbol === "ETH")!, 51_160_101)).toContain(
+      "ETH aligned · confirmed long",
+    );
+    expect(citeComposeRow(rows.find((r) => r.symbol === "BTC")!, 51_160_101)).toContain(
+      "BTC fighting · confirmed short",
+    );
+    expect(citeComposeRow(rows.find((r) => r.symbol === "VIRTUAL")!, 51_160_101)).toContain(
+      "VIRTUAL fighting · confirmed short",
+    );
+    expect(payload.cites.join("\n")).toMatch(/ETH aligned/);
+    expect(payload.cites.join("\n")).toMatch(/BTC fighting/);
+    expect(payload.cites.join("\n")).toMatch(/VIRTUAL fighting/);
+    expect(payload.cites.join("\n")).toMatch(/Graph maps block 51160101/);
+  });
+
   it("says Confirm is not onchain when every row is unmapped", () => {
     const rows = compose({
       bag: [{ symbol: "SOL", amount: 10, contract: null }],

@@ -40,4 +40,23 @@ describe("compose", () => {
     expect(rows).toHaveLength(1);
     expect(rows[0]?.status).toBe("insolvent");
   });
+
+  it("seed story: ETH long / BTC short / VIRTUAL short", () => {
+    const rows = compose({
+      bag: [
+        { symbol: "ETH", amount: 0.003, contract: null },
+        { symbol: "BTC", amount: 0.01, contract: null },
+        { symbol: "VIRTUAL", amount: 100, contract: null },
+      ],
+      maps: [
+        { symbol: "ETH", bias: "long", longKill: null, shortKill: null },
+        { symbol: "BTC", bias: "short", longKill: null, shortKill: null },
+        { symbol: "VIRTUAL", bias: "short", longKill: null, shortKill: null },
+      ],
+    });
+    const by = Object.fromEntries(rows.map((r) => [r.symbol, r.status]));
+    expect(by.ETH).toBe("aligned");
+    expect(by.BTC).toBe("fighting");
+    expect(by.VIRTUAL).toBe("fighting");
+  });
 });

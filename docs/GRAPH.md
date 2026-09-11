@@ -12,6 +12,22 @@ Bag and maps are on **Base** — one chain for the demo. Live Studio maps (`trad
 
 ![You prompt Ask AI. This turn it reads the wallet and The Graph, then cites conflictOf.](../assets/schematics/graph-ask.svg)
 
+## The problem
+
+People already have a chart, a wallet, and a chat box. None of those three will answer: **are the coins I hold fighting the count I said I believe?**
+
+That is not a missing indicator. It is a missing join. The count lives as a drawing or a screenshot. The coins live at a venue or a portfolio app. The model in the chat will invent “aligned.” Nothing in the middle is a live, queryable decision — four words only, the same function every time.
+
+| Pain | What others do | What this does — and why there is no stand-in |
+|---|---|---|
+| You are long the coin while your own weekly count is Short. | TradingView never sees the wallet. DeBank / Zapper never see a Confirm. The venue only sees size. | Compose reads coins and confirmed maps, then `conflictOf` says fighting. No other product owns both sides. |
+| You ask a model if the book is safe. It sounds sure. | ChatGPT, copilots, and venue chat guess. They do not re-fetch a subgraph this turn. | Ask AI must cite the row — symbol, status, map side, size, maps block — or say Studio failed. It may not invent fighting. |
+| Last month’s “call” is a screenshot. Nobody can query it. | Twitter, Discord, and TradingView ideas are pictures. Subgraph browsers show raw entities, not a decision. | `MapConfirmed` is an onchain event Studio indexes. Partners run the same join in `demo/`, MCP, or `npm run compose` — `0x` in, rows out. |
+| A portfolio lists every airdrop as if it were the book. | Wallet dashboards optimize for “what tokens exist.” They do not know a hashed count. | The desk book is the connected wallet (RPC + Hyperliquid). The Graph bag is an allowlist on Base. Hostile metadata never enters compose. |
+| A fake spike takes the obvious stop. | Binance and Hyperliquid flatten on mark / wick. The chart app can alert. Neither knows your map. | Invalidation here is a weekly close on a confirmed map. Flatten is not live yet — the board still names insolvent when liquidation sits inside that map. |
+
+Adjacent tools each own one pane. A chart company is not a wallet indexer; a portfolio is not an Elliott Confirm; a venue is not a map; a generic model has no duty to cite The Graph. The join is the product.
+
 ## How it connects
 
 1. **You** type a book question — “Is my bag fighting this map?” or “Tell me about my position.” That is not a sixth Elliott step.
@@ -23,6 +39,14 @@ Bag and maps are on **Base** — one chain for the demo. Live Studio maps (`trad
 Status has four values only: `aligned` · `fighting` · `unmapped` · `insolvent`. Policy: [`src/policy/conflict.ts`](../src/policy/conflict.ts). Formatter: [`src/graph/prompt.ts`](../src/graph/prompt.ts) (`composeAskPayload`, `citeComposeRow`).
 
 If Studio fails, the payload says Studio failed. The model must not invent a status. If the desk has no wallet, Ask says connect first.
+
+## How compose runs
+
+Two live Graph products. Two HTTP queries. Then TypeScript — `conflictOf` — not a federated GraphQL join.
+
+![Base events, two Studio subgraphs, two HTTP queries, then conflictOf. Four states. Four surfaces.](../assets/schematics/graph-tech.svg)
+
+![Compose joins coins with confirmed maps into aligned, fighting, unmapped, or insolvent.](../assets/schematics/compose.svg)
 
 ## Two products
 

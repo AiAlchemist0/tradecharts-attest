@@ -36,4 +36,4 @@ See [README](../README.md#run) — offline tests, the `LIVE_GRAPH=1` live compos
 
 ## Desk (this event)
 
-Watchlist is the wallet. Liq and kill on one pane. Propose → validator → Confirm → Graph row → Chainlink close → human-backed agent (World) → flatten. Solo book on the live site. Other tools can query the same record later.
+Watchlist is the wallet. Liq and kill on one pane. Propose → validator → Confirm (still a **private save** on the live desk). Graph maps are `MapConfirmed` events already on Base — the desk Confirm button does not write them yet. Chainlink close-kill writes `KillSettled`; flatten is not live. Other tools can query the same Graph record later.

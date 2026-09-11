@@ -116,6 +116,9 @@ Partner map. Same page on the desk: [tradecharts.app/docs/graph](https://tradech
 <p align="center">
   <img src="assets/schematics/graph-ask.svg" width="100%" alt="You prompt Ask AI. This turn it reads the wallet and The Graph, then cites conflictOf." />
 </p>
+<p align="center">
+  <img src="assets/schematics/graph-tech.svg" width="100%" alt="Base events, two Studio subgraphs, two HTTP queries, then conflictOf. No single GraphQL join." />
+</p>
 
 **You ask. The wallet is the book. Ask AI cites a live Studio join — it does not invent fighting.**
 

@@ -78,8 +78,10 @@ async function run(wallet: string): Promise<void> {
     }
     const fighting = rows.filter((r) => r.status === "fighting").length;
     const aligned = rows.filter((r) => r.status === "aligned").length;
+    const unmapped = rows.filter((r) => r.status === "unmapped").length;
+    const insolvent = rows.filter((r) => r.status === "insolvent").length;
     out.innerHTML = `
-      <p class="summary">${rows.length} rows · ${aligned} aligned · ${fighting} fighting</p>
+      <p class="summary">${rows.length} rows · ${aligned} aligned · ${fighting} fighting · ${unmapped} unmapped · ${insolvent} insolvent</p>
       <table>
         <thead><tr><th>Symbol</th><th>Spot / bag</th><th>Perp / debt</th><th>Map</th><th>Status</th></tr></thead>
         <tbody>${rows.map(row).join("")}</tbody>
@@ -92,9 +94,10 @@ async function run(wallet: string): Promise<void> {
 document.getElementById("app")!.innerHTML = `
   <header>
     <h1>TradeCharts Attest — compose</h1>
-    <p>Live Graph products, one join: a Base ERC-20 balances subgraph and a Messari standardized
-       lending subgraph ⋈ confirmed wave maps. Every coin on the book is <b class="up">aligned</b>,
-       <b class="down">fighting</b>, or <b class="muted">unmapped</b> against its map.</p>
+    <p>Live Graph products, one join: the Base ERC-20 bag subgraph (keyless) — and optionally Messari
+       Aave — ⋈ confirmed wave maps. Every coin on the book is <b class="up">aligned</b>,
+       <b class="down">fighting</b>, <b class="muted">unmapped</b>, or <b class="warn">insolvent</b>
+       against its map.</p>
   </header>
   <form id="f">
     <input id="w" placeholder="Paste any wallet address" spellcheck="false" autocomplete="off" />

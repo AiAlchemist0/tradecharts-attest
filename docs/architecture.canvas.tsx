@@ -148,7 +148,7 @@ export default function Architecture() {
           ["src/policy/", "conflict · hash · kill"],
           ["subgraph/", "Our maps + conflict subgraph (Studio)"],
           ["src/graph/standard.ts", "Standardized token/balance subgraph client"],
-          ["src/graph/compose.ts", "Join bag ⋈ maps → aligned / fighting / unmapped"],
+          ["src/graph/compose.ts", "Join bag ⋈ maps → aligned / fighting / unmapped / insolvent"],
           ["cre/", "Confidential Workflow — flatten decision in TEE"],
           ["demo/", "Paste or connect a wallet; live Graph rows. No desk required."],
         ]}

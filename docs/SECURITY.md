@@ -9,7 +9,7 @@ The join is See / Stand behind / Stop. Security here is those three moves, not a
 | Surface | Who controls it | What must not happen |
 |---|---|---|
 | Standardized bag (token name, symbol, contract) | Anyone who can deploy an ERC-20 | Phishing ticker becomes a compose row, matches a real map, or is sent to a flatten agent |
-| Maps subgraph | Only a signed Confirm (EAS) | Arbitrary `Attested` events become a kill |
+| Maps subgraph | Only our `MapConfirmed` on Base | Arbitrary `Attested` / EAS events become a kill |
 | Kill / flatten agent | Our policy | Wick, add-size, rotate, or open |
 | Graph gateway key | Operator | Key in git or in the browser bundle |
 | Demo wallet | User | SIWE treated as a spend; flatten without device confirm |
@@ -50,7 +50,7 @@ A phishing ticker must never become the `symbol` of a flatten.
 |---|---|
 | Studio / Graph gateway API key | **No.** `.env` / operator env only. `.env.example` has names, not values. |
 | Subgraph id / Studio query URL | Yes — public query endpoint |
-| EAS contract on Base Sepolia | Yes — `0x4200…0021` is the official deployment |
+| EAS contract on Base Sepolia | Yes — `0x4200…0021` is the official predeploy. **Historical.** Live maps index `MapConfirmed` on Base, not EAS. |
 | Private desk Supabase, Cloudflare, `service_role` | **Never.** Those stay in the commercial tree. |
 
 `fetchStandardBag` puts `apiKey` in the gateway URL because that is how Graph Network auth works. Treat a committed key as burned.
