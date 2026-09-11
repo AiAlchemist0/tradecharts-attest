@@ -19,16 +19,18 @@ Use this when the user asks about a wallet's book versus TradeCharts maps — an
 4. If every row is `unmapped`, say Confirm is not onchain yet. A private desk lock is not a Graph map.
 5. Do not fetch arbitrary GraphQL. This is the only Graph look-up.
 
+Partner map (prompt, Ask AI, wallet, Studio): [docs/GRAPH.md](../docs/GRAPH.md). Bag and maps are on Base. Studio `trade-charts` v0.4.0 indexes `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C`.
+
 ## Example
 
 ```
 compose_wallet
-  address: 0xfA8C53B715755762209De11923fB99BC4607954B
+  address: 0x…
   source: base
 ```
 
 Same wallet, no desk:
 
 ```bash
-npm run compose -- 0xfA8C53B715755762209De11923fB99BC4607954B
+npm run compose -- 0x…
 ```

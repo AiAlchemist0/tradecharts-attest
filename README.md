@@ -105,6 +105,61 @@ How the join works, what lives in this repo, and how the live desk consumes it w
   <img src="assets/schematics/compose.svg" width="100%" alt="Compose joins the standardized bag with confirmed maps" />
 </p>
 
+## The Graph
+
+<p align="left">
+  <img src="assets/partners/the-graph-logo-on-light.svg" width="200" alt="The Graph" />
+</p>
+
+Partner map. Same page on the desk: [tradecharts.app/docs/graph](https://tradecharts.app/docs/graph). Full write-up: [docs/GRAPH.md](docs/GRAPH.md). Official mark: [thegraph.com/brand](https://thegraph.com/brand/).
+
+<p align="center">
+  <img src="assets/schematics/graph-ask.svg" width="100%" alt="You prompt Ask AI. This turn it reads the wallet and The Graph, then cites conflictOf." />
+</p>
+
+**You ask. The wallet is the book. Ask AI cites a live Studio join — it does not invent fighting.**
+
+### How the loop works
+
+1. **You** type a book question — “Is my bag fighting this map?” or “Tell me about my position.” That is not a sixth Elliott step. Propose and Analyse still draft the weekly map; Ask cites the book against maps already confirmed onchain.
+2. **Ask AI** does not guess `aligned` or `fighting`. This turn it re-fetches the join and must speak the cite: symbol, status, map side, size, and the maps subgraph block.
+3. **Wallet** is the book. On the live desk that is SIWE, then RPC coins + Hyperliquid perps. In this repo, `demo/` and `compose_wallet` take a `0x` and read the Graph bag.
+4. **The Graph** is two Studio products, joined in application code (`src/graph/compose.ts`): two HTTP queries, then `conflictOf`. There is no single GraphQL join. Status has four values only — `aligned` · `fighting` · `unmapped` · `insolvent` (`src/policy/conflict.ts`).
+5. **Cite** is the sentence the model is required to use, for example `ETH aligned · confirmed long · spot 0.003323 · Graph maps block N` (`src/graph/prompt.ts` — `composeAskPayload`, `citeComposeRow`).
+
+If Studio fails, the payload says Studio failed. The model must not invent a status. If the desk has no wallet, Ask says connect first.
+
+### Two products
+
+| Product | Studio (keyless) | Chain | Indexes |
+|---|---|---|---|
+| Maps `trade-charts` | `api.studio.thegraph.com/query/1758683/trade-charts/version/latest` | Base | `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C` (Studio v0.4.0) |
+| Bag `trade-charts-bag` | `api.studio.thegraph.com/query/1758683/trade-charts-bag/version/latest` | Base | Allowlisted ERC-20: WETH, USDC, cbBTC, DEGEN, VIRTUAL, DAI |
+
+Bag and maps are on **one chain — Base**. Do not Graph Network Publish.
+
+Optional third product for the composable line: Messari Aave V3 on the Network (`src/graph/aave.ts`). Needs `GRAPH_API_KEY`. Not required for the Ask loop.
+
+`MapConfirmed.confirm` takes a wallet as an argument — an attester can seed maps for that address. Paste your own `0x` in `demo/` or the CLI. This repo does not ship a personal book as the sample.
+
+### Desk versus this repo (honesty)
+
+| Surface | Bag | Maps |
+|---|---|---|
+| Live desk board + Ask | Wallet RPC coins + Hyperliquid perps | Studio maps, fetched this turn |
+| `demo/` and `compose_wallet` | Studio bag (Base allowlist) | Studio maps, same `conflictOf` |
+
+A wallet can show ETH on the desk and spot `0` on the Graph bag. That is expected. The bag subgraph only indexes the allowlist on Base. Desk Ask is **maps-live**. This repo’s demo is **bag-live**. Both use the same status function. Confirm on [tradecharts.app](https://tradecharts.app) is still a **private save** — it is not yet a `MapConfirmed` from the desk. Flatten is not live. `demo/` is bag ⋈ maps on Base.
+
+### What you can run
+
+- **Desk** — connect a wallet, open Ask, tap *Is my bag fighting this map?* (crypto + book wallet) or type a position question.
+- **Browser demo** — `cd demo && npm install && npm run dev`. Paste any `0x`. No keys.
+- **CLI** — `npm run compose -- 0x…`
+- **MCP** — `compose_wallet` over stdio (`mcp/SKILL.md`). `source=base` is keyless Studio.
+
+Not this setup: arbitrary GraphQL over the Network, Graph Network Publish of these products, onchain Confirm from the live desk, or flatten when a kill prints.
+
 ## Live desk
 
 <p align="center">
@@ -166,7 +221,7 @@ Visitor docs: https://tradecharts.app/docs
 npm install
 npm test                  # 88 offline (compose, conflict, Ask payload, MCP)
 LIVE_GRAPH=1 npm test     # + the live compose check against both Studio subgraphs
-npm run compose -- 0xfA8C53B715755762209De11923fB99BC4607954B
+npm run compose -- 0x…
 ```
 
 **Ask AI** on the live desk re-fetches this join on book questions (`composeAskPayload` in `src/graph/prompt.ts`). **Tooling:** `compose_wallet` is the same payload over stdio MCP (`mcp/SKILL.md`).
@@ -195,7 +250,8 @@ Deploy the subgraphs yourself (needs a Subgraph Studio deploy key, never committ
 
 ```bash
 cd subgraphs/bag && npm install && npm run deploy   # trade-charts-bag — Base ERC-20 balances
-cd subgraph      && npm install && npm run deploy   # trade-charts — maps from MapConfirmed events (Base Sepolia)
+cd subgraph      && npm install && npm run deploy:base   # MapConfirmed on Base + seed ETH/BTC/VIRTUAL
+cd subgraph      && npm run codegen && npm run deploy    # trade-charts — maps (Base after yaml points at Base)
 ```
 
 Copy `.env.example` to `.env` to override endpoints or use a Graph Network gateway key. Never commit `.env`.

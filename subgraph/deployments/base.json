@@ -1,0 +1,27 @@
+{
+  "chain": "base",
+  "address": "0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C",
+  "startBlock": 51160101,
+  "deployTx": "0x3dc521e2bee524f49915c16f2c1cb87d140a72e69e07a17a2a23e201d9876237",
+  "seeds": [
+    {
+      "symbol": "ETH",
+      "side": "long",
+      "tx": "0xf5c3a6141cd1c6df558f7250f01ecbe08fb8e91f4e97fb1c58966750c4978443",
+      "block": 51160104
+    },
+    {
+      "symbol": "BTC",
+      "side": "short",
+      "tx": "0x5f8ef6b6c98edd816a9f6758aad24582e46e5539c95a20eeb370ddb208076435",
+      "block": 51160106
+    },
+    {
+      "symbol": "VIRTUAL",
+      "side": "short",
+      "tx": "0x09bcd3287f37c39b8281afc914fd486dd26f700bc181e2e4a5192551eeef9ab6",
+      "block": 51160109
+    }
+  ],
+  "book": "0xfA8C53B715755762209De11923fB99BC4607954B"
+}

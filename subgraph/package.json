@@ -4,10 +4,13 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy trade-charts --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/api/v0 -l v0.3.0"
+    "deploy": "graph deploy trade-charts --node https://api.studio.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/api/v0 -l v0.4.0",
+    "deploy:base": "node scripts/deploy-base.mjs"
   },
   "devDependencies": {
-    "@graphprotocol/graph-cli": "^0.98.1"
+    "@graphprotocol/graph-cli": "^0.98.1",
+    "ethers": "^6.15.0",
+    "solc": "^0.8.20"
   },
   "dependencies": {
     "@graphprotocol/graph-ts": "0.37.0"

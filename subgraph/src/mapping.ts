@@ -3,8 +3,8 @@ import { Confirmed as ConfirmedEvent } from "../generated/MapConfirmed/MapConfir
 import { Map } from "../generated/schema";
 
 /**
- * Confirmed maps arrive as MapConfirmed events on Base Sepolia — one event is
- * one map, emitted by the desk's Confirm flow (or the seed script). Compose
+ * Confirmed maps arrive as MapConfirmed events on Base — one event is one map,
+ * emitted by the seed script (desk Confirm is still a private save). Compose
  * (bag ⋈ maps) runs client-side in src/graph — this subgraph is the maps side.
  */
 export function handleConfirmed(event: ConfirmedEvent): void {

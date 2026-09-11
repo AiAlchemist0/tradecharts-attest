@@ -1,6 +1,6 @@
 /**
  * One-liner for judges / the video:
- *   npm run compose -- 0xfA8C53B715755762209De11923fB99BC4607954B
+ *   npm run compose -- 0x…
  */
 
 import { composeWallet, type ComposeSource } from "./wallet";

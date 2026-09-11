@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-label="You prompt Ask AI. This turn it reads the wallet and The Graph, then cites conflictOf.">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5c5c58"/>
+    </marker>
+    <marker id="arr-gold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#c4a06a"/>
+    </marker>
+    <marker id="arr-up" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#3dbe8c"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="720" rx="16" fill="#080809"/>
+  <rect x="0.75" y="0.75" width="1098.5" height="718.5" rx="15.25" fill="none" stroke="#2a2a2e"/>
+
+  <text x="40" y="38" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="3.2" fill="#c4a06a">THE GRAPH &#183; ASK LOOP</text>
+  <text x="40" y="74" font-family="Georgia, 'Iowan Old Style', Times New Roman, serif" font-size="28" fill="#ecece8">You ask. The wallet answers. Ask AI cites.</text>
+  <text x="40" y="100" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="14" fill="#8b8b86">Status is conflictOf only. The model does not invent aligned or fighting. Private Confirm is not a Graph map.</text>
+  <!-- Official The Graph logo (Light lockup) from thegraph.com/brand -->
+  <g transform="translate(908, 22) scale(0.643)" aria-label="The Graph">
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M3.5 19.6747C3.5 28.3098 10.5264 35.3275 19.1529 35.3275C27.7794 35.3275 34.8058 28.3098 34.8058 19.6747C34.8058 11.0395 27.7794 4.02176 19.1529 4.02176C10.5264 4.02176 3.5 11.0395 3.5 19.6747ZM8.71763 19.6747C8.71763 13.9179 13.3961 9.2394 19.1529 9.2394C24.9097 9.2394 29.5882 13.9179 29.5882 19.6747C29.5882 25.4314 24.9097 30.1099 19.1529 30.1099C13.3961 30.1099 8.71763 25.4314 8.71763 19.6747ZM34.0405 39.7799L23.6053 50.2152C23.1009 50.7283 22.4313 50.9804 21.7617 50.9804C21.0921 50.9804 20.4312 50.7283 19.9181 50.2152C18.9007 49.1978 18.9007 47.5455 19.9181 46.5281L30.3534 36.0928C31.3709 35.0754 33.0231 35.0754 34.0405 36.0928C35.058 37.1102 35.058 38.7625 34.0405 39.7799ZM34.284 6.63058C34.284 4.90876 35.6928 3.5 37.4146 3.5C39.1364 3.5 40.5452 4.90876 40.5452 6.63058C40.5452 8.3524 39.1364 9.76116 37.4146 9.76116C35.6928 9.76116 34.284 8.3524 34.284 6.63058ZM68.1509 17.435V38.1822H62.8553V17.435H56V12.4296H75.0787V17.435H68.1509ZM82.8771 29.332V38.1822H77.9079V10.9787H82.8771V22.114C83.8201 20.6632 85.7062 19.6476 88.0639 19.6476C92.4527 19.6476 95.0642 22.8395 95.0642 27.5547V38.1822H90.0951V28.389C90.0951 25.7774 88.9706 24.1815 86.9032 24.1815C84.6181 24.1815 82.8771 25.85 82.8771 29.332ZM117.262 32.27C116.174 35.9334 112.583 38.5812 107.977 38.5812C102.427 38.5812 98.4737 34.5914 98.4737 29.0781C98.4737 23.6737 102.5 19.6476 108.013 19.6476C113.345 19.6476 117.734 23.4561 117.48 30.2751H103.334C103.552 32.4151 105.148 34.2649 108.231 34.2649C109.972 34.2649 111.495 33.5032 112.075 32.27H117.262ZM103.515 27.0107H112.039C111.423 24.5805 109.573 23.6737 107.868 23.6737C105.583 23.6737 103.987 25.0157 103.515 27.0107ZM154.622 22.7669C155.782 33.3581 149.58 38.6175 141.927 38.6175C134.056 38.6175 128.361 32.7778 128.361 25.3059C128.361 17.834 134.056 11.9943 141.854 11.9943C147.259 11.9943 152.264 15.1862 154.005 20.0466H147.984C146.715 18.1605 144.321 17.0723 141.854 17.0723C136.921 17.0723 133.657 20.6994 133.657 25.3059C133.657 29.9124 136.921 33.5395 141.927 33.5395C146.098 33.5395 148.601 31.2544 149.181 27.6998H141.31V22.7669H154.622ZM163.291 29.5134V38.1822H158.321V20.0466H163.291V22.9483C163.907 21.171 165.757 19.8289 167.788 19.8289C168.296 19.8289 168.84 19.8652 169.457 20.0466V25.0883C168.695 24.8344 168.006 24.6893 167.208 24.6893C164.85 24.6893 163.291 26.5391 163.291 29.5134ZM184.582 36.151C183.784 37.3117 181.862 38.5812 179.359 38.5812C174.535 38.5812 170.835 34.2649 170.835 29.1144C170.835 23.9639 174.535 19.6476 179.359 19.6476C181.862 19.6476 183.784 20.9171 184.582 22.0778V20.0466H189.551V38.1822H184.582V36.151ZM175.84 29.1144C175.84 31.9436 177.69 34.0473 180.411 34.0473C183.131 34.0473 184.981 31.9436 184.981 29.1144C184.981 26.2852 183.131 24.1815 180.411 24.1815C177.69 24.1815 175.84 26.2852 175.84 29.1144ZM199.344 36.151V45.7629H194.375V20.0466H199.344V22.0778C200.179 20.9171 202.101 19.6476 204.604 19.6476C209.428 19.6476 213.127 23.9639 213.127 29.1144C213.127 34.2649 209.428 38.5812 204.604 38.5812C202.101 38.5812 200.179 37.3117 199.344 36.151ZM198.945 29.1144C198.945 31.9436 200.795 34.0473 203.516 34.0473C206.236 34.0473 208.086 31.9436 208.086 29.1144C208.086 26.2852 206.236 24.1815 203.516 24.1815C200.795 24.1815 198.945 26.2852 198.945 29.1144ZM221.724 29.332V38.1822H216.755V10.9787H221.724V22.114C222.667 20.6632 224.553 19.6476 226.911 19.6476C231.299 19.6476 233.911 22.8395 233.911 27.5547V38.1822H228.942V28.389C228.942 25.7774 227.817 24.1815 225.75 24.1815C223.465 24.1815 221.724 25.85 221.724 29.332Z"/>
+  </g>
+
+  <rect x="40" y="124" width="400" height="156" rx="12" fill="#111114" stroke="#8fa3b8" stroke-opacity="0.45"/>
+  <text x="60" y="152" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#8fa3b8">01 &#183; YOU</text>
+  <text x="60" y="186" font-family="Georgia, Times New Roman, serif" font-size="22" fill="#ecece8">Prompt</text>
+  <text x="60" y="218" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#c8c8c2">&#8220;Is my bag fighting this map?&#8221;</text>
+  <text x="60" y="242" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#c8c8c2">&#8220;Tell me about my position.&#8221;</text>
+  <text x="60" y="266" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">A book question &#8212; not a sixth Elliott step.</text>
+
+  <line x1="440" y1="202" x2="656" y2="202" stroke="#c4a06a" stroke-width="1.4" marker-end="url(#arr-gold)"/>
+  <text x="548" y="192" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="1.6" fill="#c4a06a">ASK</text>
+
+  <rect x="660" y="124" width="400" height="156" rx="12" fill="#111114" stroke="#f0ebe3" stroke-opacity="0.28"/>
+  <text x="680" y="152" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#f0ebe3">02 &#183; ASK AI</text>
+  <text x="680" y="186" font-family="Georgia, Times New Roman, serif" font-size="22" fill="#ecece8">Cites the join</text>
+  <text x="680" y="218" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#c8c8c2">Re-fetches Studio this turn.</text>
+  <text x="680" y="242" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#c8c8c2">Answers in your words.</text>
+  <text x="680" y="266" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">Does not invent status if Studio fails.</text>
+
+  <line x1="860" y1="280" x2="860" y2="304" stroke="#5c5c58"/>
+  <text x="870" y="298" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.4" fill="#8b8b86">THIS TURN</text>
+  <line x1="290" y1="304" x2="860" y2="304" stroke="#5c5c58"/>
+  <line x1="810" y1="304" x2="810" y2="328" stroke="#5c5c58" marker-end="url(#arr)"/>
+  <line x1="290" y1="304" x2="290" y2="328" stroke="#5c5c58" marker-end="url(#arr)"/>
+
+  <rect x="40" y="332" width="500" height="148" rx="12" fill="#111114" stroke="#3dbe8c" stroke-opacity="0.4"/>
+  <text x="60" y="360" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#3dbe8c">03 &#183; WALLET</text>
+  <text x="60" y="394" font-family="Georgia, Times New Roman, serif" font-size="22" fill="#ecece8">The book</text>
+  <text x="60" y="424" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#c8c8c2">SIWE sign-in. RPC coins + Hyperliquid perps.</text>
+  <text x="60" y="448" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Desk bag is what you hold &#8212; not a watchlist guess.</text>
+  <text x="60" y="468" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">No wallet &#8594; Ask says connect first.</text>
+
+  <rect x="560" y="332" width="500" height="148" rx="12" fill="#111114" stroke="#c4a06a" stroke-opacity="0.5"/>
+  <g transform="translate(1012, 348) scale(0.5)" aria-label="The Graph logomark">
+    <path fill="#ffffff" d="M29 43.9999C19.08 43.9999 11 35.9299 11 25.9999C11 16.0699 19.08 7.9999 29 7.9999C38.92 7.9999 47 16.0699 47 25.9999C47 35.9299 38.92 43.9999 29 43.9999ZM29 13.9999C22.38 13.9999 17 19.3799 17 25.9999C17 32.6199 22.38 37.9999 29 37.9999C35.62 37.9999 41 32.6199 41 25.9999C41 19.3799 35.62 13.9999 29 13.9999ZM34.12 61.1199L46.12 49.1199C47.29 47.9499 47.29 46.0499 46.12 44.8799C44.95 43.7099 43.05 43.7099 41.88 44.8799L29.88 56.8799C28.71 58.0499 28.71 59.9499 29.88 61.1199C30.47 61.7099 31.23 61.9999 32 61.9999C32.77 61.9999 33.54 61.7099 34.12 61.1199ZM50 7.3999C48.02 7.3999 46.4 9.0199 46.4 10.9999C46.4 12.9799 48.02 14.5999 50 14.5999C51.98 14.5999 53.6 12.9799 53.6 10.9999C53.6 9.0199 51.98 7.3999 50 7.3999Z"/>
+  </g>
+  <text x="580" y="360" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#c4a06a">04 &#183; THE GRAPH</text>
+  <text x="580" y="394" font-family="Georgia, Times New Roman, serif" font-size="22" fill="#ecece8">Studio</text>
+  <text x="580" y="424" font-family="ui-sans-serif, system-ui, sans-serif" font-size="14" fill="#c8c8c2">Maps: trade-charts &#183; MapConfirmed &#183; block N</text>
+  <text x="580" y="448" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Bag: trade-charts-bag &#183; Base ERC-20 (demo + MCP)</text>
+  <text x="580" y="468" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8b8b86">Two products. Application-side join. Keyless Studio.</text>
+
+  <line x1="290" y1="480" x2="290" y2="508" stroke="#5c5c58"/>
+  <line x1="810" y1="480" x2="810" y2="508" stroke="#5c5c58"/>
+  <line x1="290" y1="508" x2="810" y2="508" stroke="#5c5c58"/>
+  <line x1="550" y1="508" x2="550" y2="528" stroke="#c4a06a" marker-end="url(#arr-gold)"/>
+
+  <rect x="40" y="532" width="1020" height="88" rx="12" fill="#111114" stroke="#2a2a2e"/>
+  <circle cx="88" cy="576" r="22" fill="#080809" stroke="#c4a06a" stroke-width="1.6"/>
+  <text x="88" y="583" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="16" fill="#c4a06a">&#8904;</text>
+  <text x="128" y="564" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2.2" fill="#c4a06a">LIVE COMPOSE</text>
+  <text x="128" y="590" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" fill="#ecece8">conflictOf is the only status &#8212; aligned &#183; fighting &#183; unmapped &#183; insolvent</text>
+  <text x="128" y="608" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#8b8b86">Desk: RPC bag &#8904; Studio maps. Demo / MCP: Graph bag &#8904; Studio maps. Same function.</text>
+
+  <line x1="550" y1="620" x2="550" y2="640" stroke="#3dbe8c" marker-end="url(#arr-up)"/>
+
+  <rect x="40" y="644" width="1020" height="56" rx="12" fill="#111114" stroke="#3dbe8c" stroke-opacity="0.35"/>
+  <text x="60" y="666" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="2" fill="#3dbe8c">CITE &#183; ASK AI SPEAKS THIS</text>
+  <text x="60" y="688" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="14" fill="#ecece8">ETH aligned &#183; confirmed long &#183; spot 0.003323 &#183; Graph maps block N</text>
+</svg>

@@ -16,8 +16,6 @@ const DEFAULT_BAG =
   "https://api.studio.thegraph.com/query/1758683/trade-charts-bag/version/latest";
 const DEFAULT_MAPS =
   "https://api.studio.thegraph.com/query/1758683/trade-charts/version/latest";
-const BUILDER_WALLET = "0xfA8C53B715755762209De11923fB99BC4607954B";
-
 const params = new URLSearchParams(location.search);
 const bagUrl = params.get("bag") ?? DEFAULT_BAG;
 const mapsUrl = params.get("maps") ?? DEFAULT_MAPS;
@@ -106,7 +104,6 @@ document.getElementById("app")!.innerHTML = `
       <option value="both">Both</option>
     </select>
     <button type="submit">Compose</button>
-    <button type="button" id="preset">Builder wallet</button>
   </form>
   <section id="out" aria-live="polite"><p class="loading">Paste an address to join its bag with confirmed maps.</p></section>
   <footer>
@@ -114,7 +111,7 @@ document.getElementById("app")!.innerHTML = `
     <p class="mono">aave: <span class="mono">gateway…/subgraphs/id/${AAVE_SUBGRAPH_ID.slice(0, 12)}…</span> (Messari standardized schema)</p>
     <p class="mono">maps: <a href="${mapsUrl}" target="_blank" rel="noreferrer">${mapsUrl.replace("https://api.studio.thegraph.com/query/", "…/")}</a></p>
     <p>Bag balances cover Transfers in the subgraph's indexed window (≈2 weeks, syncing to head); Aave positions are open LENDER (bag) and
-       BORROWER (debt) sides on Arbitrum. Maps are MapConfirmed events on Base Sepolia.
+       BORROWER (debt) sides on Arbitrum. Maps are MapConfirmed events on Base with the bag.
        Source: <a href="https://github.com/AiAlchemist0/tradecharts-attest" target="_blank" rel="noreferrer">tradecharts-attest</a> · live desk: <a href="https://tradecharts.app" target="_blank" rel="noreferrer">tradecharts.app</a></p>
   </footer>`;
 
@@ -125,8 +122,4 @@ form.addEventListener("submit", (e) => {
   const wallet = input.value.trim();
   if (/^0x[a-fA-F0-9]{40}$/.test(wallet)) run(wallet);
   else document.getElementById("out")!.innerHTML = `<p class="error">That is not a 0x… address.</p>`;
-});
-document.getElementById("preset")!.addEventListener("click", () => {
-  input.value = BUILDER_WALLET;
-  run(BUILDER_WALLET);
 });

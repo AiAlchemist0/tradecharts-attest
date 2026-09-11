@@ -30,7 +30,7 @@ Explorer / subgraph token fields are **attacker-controlled**. A token named `VIS
 ## Stand behind — maps are Confirm, not a tweet
 
 - `mapHash` (`src/policy/hash.ts`) is SHA-256 of canonical JSON. Onchain attestations must hash the same string.
-- The maps subgraph indexes **our** Confirm schema. Other EAS `Attested` events are ignored (handler is a no-op until `MapConfirmed` is wired; then filter by schema UID + attester = the signing wallet).
+- The maps subgraph indexes **our** `MapConfirmed` events on Base (`0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C`). Other EAS `Attested` events are ignored.
 - A map without a wallet is not a policy.
 
 ## Stop — flatten only, close only, human in the loop
