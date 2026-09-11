@@ -18,23 +18,35 @@ npx @worldcoin/agentkit-cli register <agent-address>   # prompts World App verif
 npx @worldcoin/agentkit-cli status <agent-address>     # resolve: human-backed or not
 ```
 
-Agent address for this event: the close-kill settlement wallet (see the keys
-folder on the desk machine). Registration runs on World Chain via the hosted
-relay — no gas from us.
+Agent address for this event (close-kill settlement wallet):
+`0x09759E44aF6CFC013586ae9a0ecdBC3D27734C7b`.
+
+Registration runs on World Chain via the hosted relay — no gas from us.
+Resolve locally: `node world/resolve.mjs 0x09759E44aF6CFC013586ae9a0ecdBC3D27734C7b`.
+
+**Status 2026-09-10:** `registered: false`, `humanId: null`. CLI tickets attach in
+production World App. AgentKit then requires an **Orb-verified World ID**
+(*Humans only — Visit an Orb to verify*). Resume: Orb → `register` again while
+the CLI process is still waiting (~5 min).
+
+The CLI always emits production `https://world.org/verify`. There is no
+`--sandbox` flag. Do not rewrite the host to `sandbox.world.org` (Sandbox then
+returns `malformed_request`).
 
 ## Testing without an Orb
 
-The prize line's required path: the **World ID Sandbox App** (access via the
-Google Form linked from the
+The prize line's **Sandbox App** (access via the Google Form on the
 [ETHOnline World prize page](https://ethglobal.com/events/ethonline2026/prizes/world))
-tests the full proof flow from a phone — no hardware.
+is for proof-flow UX and `feedback.md`. It cannot complete `agentkit-cli
+register` — that ticket is production-only, and AgentBook then needs Orb
+uniqueness. Observed states and errors: [`feedback.md`](feedback.md).
 
 ## Prize checklist (AgentKit Continuity)
 
 - [x] Working app — the live desk at tradecharts.app + this repo
-- [ ] Registers the agent through AgentBook — `register` above (one Dean step)
-- [ ] Sandbox App test run — evidence collected into `feedback.md`
-- [ ] Feedback document — `feedback.md`, filled during testing
+- [ ] Registers the agent through AgentBook — blocked on Orb World ID (2026-09-10)
+- [x] Sandbox App test run — evidence in `feedback.md` (Sandbox cannot finish CLI register)
+- [x] Feedback document — `feedback.md`, filled 2026-09-10
 
 Ledger remains built in [`../ledger/`](../ledger/README.md) as unticked
 development work; World is the submitted human-gate partner.
