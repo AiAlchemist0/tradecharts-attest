@@ -211,11 +211,14 @@ Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wycko
 | --- | --- | --- |
 | **See** | `src/policy/conflict.ts` | **The Graph** — two Studio products + `compose.ts`. Live queries, not mocked. |
 | **Stand behind** | `src/policy/kill.ts` | **Chainlink** CRE `handlerInTee` — weekly close; `KillSettled` on Base Sepolia. |
-| **Stop** | `src/policy/kill.ts` | **World** — human-backed agent only. Flatten matching Hyperliquid only. |
+| **Stop** | `world/` then `ledger/` | **World** is the human. **Ledger** is the device tap. Then flatten matching Hyperliquid only. |
 | **Validator** | `src/validator/` | Same gate as production. Copied, tested. |
 
 <p align="center">
-  <img src="assets/schematics/see-stand-stop.svg" width="100%" alt="See, Stand behind, Stop — The Graph, Chainlink, World" />
+  <img src="assets/schematics/stop-gate.svg" width="100%" alt="Confirm to Graph to Chainlink to World to Ledger to flatten. The desk only reads." />
+</p>
+<p align="center">
+  <img src="assets/schematics/see-stand-stop.svg" width="100%" alt="See, Stand behind, Stop — The Graph, Chainlink, World, Ledger" />
 </p>
 
 <p align="center">
@@ -226,7 +229,7 @@ Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wycko
   <img src="assets/screenshots/06-attest.png" width="100%" alt="Attested Confirm" />
 </p>
 
-The Ledger gate is also built and verified — real firmware on the partner-sanctioned [Speculos](https://developers.ledger.com/docs/device-app/references/framework) emulator (`ledger/`) — as development work beyond the submitted partner set.
+Ledger is the device tap after World, before funds. Real firmware on the partner-sanctioned [Speculos](https://developers.ledger.com/docs/device-app/references/framework) emulator (`ledger/`). Flatten is not live on Hyperliquid.
 
 ## Methodology
 
