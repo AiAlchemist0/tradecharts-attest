@@ -20,7 +20,7 @@ Hostile ERC-20 names in the standardized bag are dropped before compose (`src/sa
 
 ## Event wiring
 
-1. **The Graph** — live products, joined in `src/graph/compose.ts`: our **Base ERC-20 balances subgraph** (`subgraphs/bag/`) and a **Messari standardized-schema lending subgraph** (Aave V3, Arbitrum — `src/graph/aave.ts`, LENDER → bag / BORROWER → debt) ⋈ our **maps subgraph** (`subgraph/`, `MapConfirmed` events, Base Sepolia). `src/graph/prompt.ts` formats rows into the desk Ask AI's prompt. Run it in `demo/` with any address.
+1. **The Graph** — live products, joined in `src/graph/compose.ts`: our **Base ERC-20 balances subgraph** (`subgraphs/bag/`) and a **Messari standardized-schema lending subgraph** (Aave V3, Arbitrum — `src/graph/aave.ts`, LENDER → bag / BORROWER → debt) ⋈ our **maps subgraph** (`subgraph/`, `MapConfirmed` events, Base Sepolia). `src/graph/prompt.ts` formats rows for desk Ask AI (`composeAskPayload`) and the public `compose_wallet` MCP (`mcp/`, `src/graph/wallet.ts`). Status is `conflictOf` only. Run it in `demo/` or `npm run compose -- 0x…`.
 2. **Chainlink** — CRE Confidential Workflow (`cre/`, `handlerInTee`) decides flatten from the private kill policy; the decision is written onchain (`KillSettled`).
 3. **World** — the settlement agent must be human-backed in AgentBook (World ID proof) before funds (`world/`). A Ledger device gate also stays built in `ledger/` — real Ethereum firmware on the partner-sanctioned Speculos emulator, approval verified end-to-end — as unticked development work.
 

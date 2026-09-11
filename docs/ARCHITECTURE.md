@@ -41,6 +41,8 @@ flowchart LR
 | `src/graph/standard.ts` | Bag client — Studio endpoint (keyless) or Network gateway mode |
 | `src/graph/compose.ts` | Join bag ⋈ maps → aligned / fighting / unmapped |
 | `src/graph/live.test.ts` | `LIVE_GRAPH=1 npm test` — the live two-subgraph join |
+| `src/graph/wallet.ts` | `compose_wallet` — same Ask payload, keyless `base` path |
+| `mcp/` | stdio MCP + `SKILL.md`. One tool. No desk keys. |
 | `demo/` | Paste an address → live compose rows. No keys, no desk. **Shipped.** |
 | `cre/` | Close-kill CRE Confidential Workflow (`handlerInTee`): private kill policy in secrets, deterministic decision, `KillSettled` onchain write. **Shipped; live CRE run after the Chainlink session.** |
 | `ledger/` | The human gate after the TEE, before funds — Agent Stack / Key Ring plan + DQ notes. |

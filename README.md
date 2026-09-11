@@ -164,9 +164,26 @@ Visitor docs: https://tradecharts.app/docs
 
 ```bash
 npm install
-npm test                  # 65 tests, offline
+npm test                  # 88 offline (compose, conflict, Ask payload, MCP)
 LIVE_GRAPH=1 npm test     # + the live compose check against both Studio subgraphs
+npm run compose -- 0xfA8C53B715755762209De11923fB99BC4607954B
 ```
+
+**Ask AI** on the live desk re-fetches this join on book questions (`composeAskPayload` in `src/graph/prompt.ts`). **Tooling:** `compose_wallet` is the same payload over stdio MCP (`mcp/SKILL.md`).
+
+```json
+{
+  "mcpServers": {
+    "tradecharts-compose": {
+      "command": "node",
+      "args": ["mcp/server.mjs"],
+      "cwd": "/absolute/path/to/tradecharts-attest"
+    }
+  }
+}
+```
+
+Cursor: Settings → MCP. Claude Desktop: `claude_desktop_config.json`. `source=base` is keyless. `aave` / `both` need `GRAPH_API_KEY` in that server's env — never commit it.
 
 Try the join in a browser — paste any address, no keys:
 

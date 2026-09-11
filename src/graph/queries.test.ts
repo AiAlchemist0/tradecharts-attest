@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { fetchComposed, fetchMaps } from "./queries";
+import { fetchComposed, fetchMaps, fetchMapsMeta } from "./queries";
 import { fetchStandardBag, queryUrl } from "./standard";
 
 const STANDARD_URL = "https://api.studio.thegraph.com/query/1758683/trade-charts-bag/version/latest";
@@ -106,6 +106,22 @@ describe("fetchMaps", () => {
       { symbol: "ETH", bias: "short", longKill: null, shortKill: 2350.5 },
       { symbol: "AERO", bias: "none", longKill: null, shortKill: null },
     ]);
+  });
+
+  it("returns the Studio maps block when _meta is present", async () => {
+    stubFetch({
+      [MAPS_URL]: {
+        data: {
+          maps: [{ symbol: "ETH", side: "short", longKill: null, shortKill: "2350.5" }],
+          _meta: { block: { number: 12_345_678 } },
+        },
+      },
+    });
+    const meta = await fetchMapsMeta("0xfA8C53B715755762209De11923fB99BC4607954B", {
+      endpoint: MAPS_URL,
+    });
+    expect(meta.block).toBe(12_345_678);
+    expect(meta.maps[0]?.bias).toBe("short");
   });
 });
 

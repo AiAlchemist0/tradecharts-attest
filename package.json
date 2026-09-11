@@ -9,7 +9,12 @@
   },
   "scripts": {
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "mcp": "node mcp/server.mjs",
+    "compose": "tsx src/graph/wallet-cli.ts"
+  },
+  "dependencies": {
+    "tsx": "^4.23.13"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

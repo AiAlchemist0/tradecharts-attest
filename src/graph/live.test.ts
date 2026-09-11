@@ -8,6 +8,7 @@
  */
 import { describe, expect, it } from "vitest";
 import { fetchComposed } from "./queries";
+import { composeWallet } from "./wallet";
 import { AAVE_SUBGRAPH_ID } from "./aave";
 
 const LIVE = !!process.env.LIVE_GRAPH;
@@ -62,5 +63,15 @@ describe.skipIf(!LIVE)("live compose (two Studio subgraphs)", () => {
     expect(rows.every((r) => ["aligned", "fighting", "unmapped", "insolvent"].includes(r.status))).toBe(
       true,
     );
+  });
+
+  it("compose_wallet cites the same statuses for the builder wallet", async () => {
+    const payload = await composeWallet({ address: WALLET, source: "base" });
+    expect(payload.error).toBeNull();
+    expect(payload.rows.every((r) => ["aligned", "fighting", "unmapped", "insolvent"].includes(r.status))).toBe(
+      true,
+    );
+    expect(payload.cites.length).toBe(payload.rows.length);
+    if (payload.block != null) expect(payload.block).toBeGreaterThan(0);
   });
 });

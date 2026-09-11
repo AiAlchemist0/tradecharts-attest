@@ -13,8 +13,18 @@ const MAPS_QUERY = /* GraphQL */ `
       longKill
       shortKill
     }
+    _meta {
+      block {
+        number
+      }
+    }
   }
 `;
+
+export type MapsFetch = {
+  maps: MapRow[];
+  block: number | null;
+};
 
 function biasFromSide(side: string): MapRow["bias"] {
   const s = side.toLowerCase();
@@ -22,7 +32,7 @@ function biasFromSide(side: string): MapRow["bias"] {
   return "none";
 }
 
-export async function fetchMaps(wallet: string, cfg: MapsConfig): Promise<MapRow[]> {
+export async function fetchMapsMeta(wallet: string, cfg: MapsConfig): Promise<MapsFetch> {
   if (!isEthAddress(wallet)) throw new Error("bad wallet");
   const res = await fetch(queryUrl(cfg), {
     method: "POST",
@@ -36,14 +46,24 @@ export async function fetchMaps(wallet: string, cfg: MapsConfig): Promise<MapRow
   const json = (await res.json()) as {
     data?: {
       maps?: { symbol: string; side: string; longKill: string | null; shortKill: string | null }[];
+      _meta?: { block?: { number: number } };
     };
+    errors?: { message: string }[];
   };
-  return (json.data?.maps ?? []).map((m) => ({
-    symbol: m.symbol,
-    bias: biasFromSide(m.side),
-    longKill: m.longKill == null ? null : Number(m.longKill),
-    shortKill: m.shortKill == null ? null : Number(m.shortKill),
-  }));
+  if (json.errors?.length) throw new Error(json.errors[0]?.message ?? "maps error");
+  return {
+    maps: (json.data?.maps ?? []).map((m) => ({
+      symbol: m.symbol,
+      bias: biasFromSide(m.side),
+      longKill: m.longKill == null ? null : Number(m.longKill),
+      shortKill: m.shortKill == null ? null : Number(m.shortKill),
+    })),
+    block: json.data?._meta?.block?.number ?? null,
+  };
+}
+
+export async function fetchMaps(wallet: string, cfg: MapsConfig): Promise<MapRow[]> {
+  return (await fetchMapsMeta(wallet, cfg)).maps;
 }
 
 /**
@@ -59,14 +79,24 @@ export type ComposeOpts = {
   perps?: PerpRow[];
 };
 
-export async function fetchComposed(wallet: string, opts: ComposeOpts): Promise<ComposedRow[]> {
+export async function fetchComposedLive(
+  wallet: string,
+  opts: ComposeOpts,
+): Promise<{ rows: ComposedRow[]; block: number | null }> {
   const sources: Promise<{ bag: import("./standard").StandardBagToken[]; perps?: PerpRow[] }>[] = [];
   if (opts.standard) sources.push(fetchStandardBag(wallet, opts.standard).then((bag) => ({ bag })));
   if (opts.aave) sources.push(fetchAaveBook(wallet, opts.aave));
   if (sources.length === 0) throw new Error("fetchComposed needs a bag source: standard or aave");
 
-  const [results, maps] = await Promise.all([Promise.all(sources), fetchMaps(wallet, opts.maps)]);
+  const [results, meta] = await Promise.all([Promise.all(sources), fetchMapsMeta(wallet, opts.maps)]);
   const bag = results.flatMap((r) => r.bag);
   const extraPerps = results.flatMap((r) => r.perps ?? []);
-  return compose({ bag, maps, perps: [...(opts.perps ?? []), ...extraPerps] });
+  return {
+    rows: compose({ bag, maps: meta.maps, perps: [...(opts.perps ?? []), ...extraPerps] }),
+    block: meta.block,
+  };
+}
+
+export async function fetchComposed(wallet: string, opts: ComposeOpts): Promise<ComposedRow[]> {
+  return (await fetchComposedLive(wallet, opts)).rows;
 }
