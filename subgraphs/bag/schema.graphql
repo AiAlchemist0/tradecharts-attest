@@ -12,7 +12,7 @@ type Account @entity(immutable: false) {
   balances: [Balance!]! @derivedFrom(field: "account")
 }
 
-"""ERC-20 balance per wallet × token, accumulated from Transfer events in the indexed window (≈2 weeks, deepening post-event)."""
+"""Spot ERC-20 balance per wallet x token from Transfer events in the indexed window (~2 weeks). Not a perp. Not compose status."""
 type Balance @entity(immutable: false) {
   id: ID! # {account}|{token}
   account: Account!

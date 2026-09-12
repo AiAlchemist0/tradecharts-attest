@@ -26,7 +26,9 @@ function getOrCreateToken(address: Address): Token {
   let sym = contract.try_symbol();
   let dec = contract.try_decimals();
   let name = contract.try_name();
-  token.symbol = sym.reverted ? address.toHexString() : sym.value;
+  // Base WETH is ETH on this book — maps and the desk use ETH, not WETH.
+  const WETH = "0x4200000000000000000000000000000000000006";
+  token.symbol = address.toHexString() == WETH ? "ETH" : (sym.reverted ? address.toHexString() : sym.value);
   token.decimals = dec.reverted ? 18 : dec.value;
   token.name = name.reverted ? null : name.value;
   token.save();

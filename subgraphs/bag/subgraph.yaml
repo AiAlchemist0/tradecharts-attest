@@ -1,7 +1,11 @@
 specVersion: 1.2.0
 schema:
   file: ./schema.graphql
-description: TradeCharts bag subgraph. ERC-20 balances for a Base allowlist (WETH, USDC, cbBTC, DEGEN, VIRTUAL, DAI) from Transfer events in a ≈2-week window at chain head (deepening post-event). The bag side of the compose join (bag ⋈ maps); maps live in subgraph/.
+description: >-
+  TradeCharts bag. Base ERC-20 spot balances for an allowlist (ETH/WETH, USDC,
+  cbBTC, DEGEN, VIRTUAL, DAI) from Transfer events in a ~2-week window at
+  chain head. Spot only — not Hyperliquid perps. The bag side of compose;
+  maps live in subgraph/. Not a signal.
 dataSources:
   - kind: ethereum
     name: WETH
