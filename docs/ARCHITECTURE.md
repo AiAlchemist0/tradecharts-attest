@@ -59,9 +59,9 @@ Candles, SIWE, read-only book, Propose → validator → Confirm. Confirm is sti
 
 ## Partners
 
-- **The Graph** — two live products joined; the decision uses that row.
-- **Chainlink** — flatten is the CRE TEE; the same run writes onchain.
-- **World** — the agent must resolve to a verified human in AgentBook after the TEE, before funds.
+- **The Graph** — two live Studio products (maps v0.4.1, bag v0.2.1) joined in `compose.ts`; the decision uses that row.
+- **Chainlink** — flatten is the CRE TEE (`handlerInTee`); `KillSettled` records it. Write is keyed by TEE output.
+- **World** — the agent must resolve to a verified human in AgentBook after the TEE, before funds. Register still needs Orb. Ledger is the device fallback.
 
 Kill is a **close**, not a wick. Not a signal.
 

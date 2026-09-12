@@ -136,8 +136,8 @@ If Studio fails, the payload says Studio failed. The model must not invent a sta
 
 | Product | Studio (keyless) | Chain | Indexes |
 |---|---|---|---|
-| Maps `trade-charts` | `api.studio.thegraph.com/query/1758683/trade-charts/version/latest` | Base | `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C` (Studio v0.4.0) |
-| Bag `trade-charts-bag` | `api.studio.thegraph.com/query/1758683/trade-charts-bag/version/latest` | Base | Allowlisted ERC-20: WETH, USDC, cbBTC, DEGEN, VIRTUAL, DAI |
+| Maps `trade-charts` | `api.studio.thegraph.com/query/1758683/trade-charts/version/latest` | Base | `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C` (Studio v0.4.1) |
+| Bag `trade-charts-bag` | `api.studio.thegraph.com/query/1758683/trade-charts-bag/version/latest` | Base | Allowlisted ERC-20: ETH (WETH), USDC, cbBTC, DEGEN, VIRTUAL, DAI (Studio v0.2.1) |
 
 Bag and maps are on **one chain — Base**. Do not Graph Network Publish.
 
@@ -163,6 +163,32 @@ A wallet can show ETH on the desk and spot `0` on the Graph bag. That is expecte
 
 Not this setup: arbitrary GraphQL over the Network, Graph Network Publish of these products, onchain Confirm from the live desk, or flatten when a kill prints.
 
+## Chainlink
+
+<p align="left">
+  <img src="assets/partners/chainlink.svg" width="48" alt="Chainlink" />
+</p>
+
+Stand behind. Flatten is a CRE Confidential Workflow (`cre/`, `handlerInTee`): map side / kill / net stay in TEE secrets. A wick never fires. The public output is `{ flatten, symbol, close, kill, side, net, reasonHash }`.
+
+`KillSettled` on Base Sepolia: [`0xe9CA1F66…`](https://sepolia.basescan.org/address/0xe9CA1F6678EE6344e163f8F48CBDA12be2FA2167). First settlement tx [`0x6fc08432…`](https://sepolia.basescan.org/tx/0x6fc08432f522e46e19c38cc79e9c747c94bf5ca92a5fbb93ef9b49905dee1804). The write is keyed by the TEE output — not CRE consensus inside the workflow. Flatten is not live on Hyperliquid.
+
+Run: `cd cre && bun test`. Simulate: [cre/README.md](cre/README.md).
+
+## World
+
+<p align="left">
+  <img src="assets/partners/world.svg" width="48" alt="World" />
+</p>
+
+Stop. The settlement agent must resolve in AgentBook before funds ([world/](world/)). Sandbox App + [world/feedback.md](world/feedback.md) are filled. Production `agentkit-cli register` still needs an Orb-verified World ID — device-only World App is not enough.
+
+<p align="left">
+  <img src="assets/partners/ledger.png" width="120" alt="Ledger" />
+</p>
+
+Ledger stays built in `ledger/` as a device fallback (not a form tick) — real firmware on the partner-sanctioned Speculos emulator.
+
 ## Live desk
 
 <p align="center">
@@ -183,9 +209,9 @@ Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wycko
 
 | | Module | Partner |
 | --- | --- | --- |
-| **See** | `src/policy/conflict.ts` | **The Graph** — subgraph of maps + conflict. Live queries, not mocked. |
-| **Stand behind** | `src/policy/hash.ts` | **Chainlink** Data Streams / CRE — weekly close that invalidates. |
-| **Stop** | `src/policy/kill.ts` | **World** — human-backed agent only. Flatten only. |
+| **See** | `src/policy/conflict.ts` | **The Graph** — two Studio products + `compose.ts`. Live queries, not mocked. |
+| **Stand behind** | `src/policy/kill.ts` | **Chainlink** CRE `handlerInTee` — weekly close; `KillSettled` on Base Sepolia. |
+| **Stop** | `src/policy/kill.ts` | **World** — human-backed agent only. Flatten matching Hyperliquid only. |
 | **Validator** | `src/validator/` | Same gate as production. Copied, tested. |
 
 <p align="center">
