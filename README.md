@@ -192,11 +192,7 @@ Ledger stays built in `ledger/` as a device fallback (not a form tick) — real 
 ## Live desk
 
 <p align="center">
-  <img src="assets/screenshots/00-desk-btc.png" width="100%" alt="TradeCharts desk — BTC-USD weekly" />
-</p>
-
-<p align="center">
-  <img src="assets/screenshots/01-desk.png" width="100%" alt="TradeCharts desk — ETH-USD weekly" />
+  <img src="assets/screenshots/00-desk-btc.png" width="100%" alt="TradeCharts desk — BTC-USD weekly, aligned Long, Calculate vs liquidation" />
 </p>
 
 Wallet SIWE. Binance coin-volume tape. Spot + Hyperliquid reads. Elliott / Wyckoff / Fib / internals / events / indicators. Validator is the render gate. Confirm is still private JSON. The book does not flatten.
