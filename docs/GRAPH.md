@@ -8,7 +8,7 @@ Partner read. Same map as the desk page [tradecharts.app/docs/graph](https://tra
 
 **You ask. The wallet is the book. Ask AI cites a live Studio join — it does not invent fighting.**
 
-Bag and maps are on **Base** — one chain for the demo. Live Studio maps (`trade-charts` v0.4.1) index `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C`. Confirm on the live desk is still a private save. Flatten is not live. Interpretive map — not a trade recommendation.
+Bag and maps are on **Base** — one chain for the demo. Live Studio maps (`trade-charts` v0.4.0) index `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C`. Confirm on the live desk is still a private save. Flatten is not live. Interpretive map — not a trade recommendation.
 
 ![You prompt Ask AI. This turn it reads the wallet and The Graph, then cites conflictOf.](../assets/schematics/graph-ask.svg)
 
@@ -52,7 +52,7 @@ Two live Graph products. Two HTTP queries. Then TypeScript — `conflictOf` — 
 
 | Product | Studio (keyless) | Chain | What it indexes |
 |---|---|---|---|
-| Maps `trade-charts` | `https://api.studio.thegraph.com/query/1758683/trade-charts/version/latest` | Base | `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C` (Studio v0.4.1) |
+| Maps `trade-charts` | `https://api.studio.thegraph.com/query/1758683/trade-charts/version/latest` | Base | `MapConfirmed` `0x78D7F79e50d2fd8cC065A01f15A6d21d0F6d3C7C` (Studio v0.4.0) |
 | Bag `trade-charts-bag` | `https://api.studio.thegraph.com/query/1758683/trade-charts-bag/version/latest` | Base | Allowlist: ETH (WETH), USDC, cbBTC, DEGEN, VIRTUAL, DAI (Studio v0.2.1) |
 
 The maps contract and seed script live in this repo: [`subgraph/contracts/MapConfirmed.sol`](../subgraph/contracts/MapConfirmed.sol) · [`subgraph/scripts/deploy-base.mjs`](../subgraph/scripts/deploy-base.mjs). `confirm(wallet, …)` takes the book address as an argument. Do not Graph Network Publish.
